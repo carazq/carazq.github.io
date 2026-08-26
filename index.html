@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>carazhang — AI 产品经理 · Portfolio</title>
-<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理，经历网易游戏、字节跳动与快手；主导 AI 精灵、率土 AI 配将、AI 美术生图管线与暴雪 AI 客服，并独立上线多款小红书小工具。" />
+<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；独立上线 39K+ 下载的小红书工具，DivaTI 网站访问 35 万+。" />
 <meta property="og:title" content="carazhang — AI 产品经理" />
 <meta property="og:description" content="AI 策略产品工作与独立产品实验：从游戏 AI 到 3.9 万+ 下载的小红书工具。" />
 <meta property="og:type" content="website" />
@@ -267,7 +267,12 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 40px;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.25s ease;
   }
+  a.tool-card:hover { opacity: 0.62; }
+  a.tool-card:active { transform: translateY(1px); }
   .tool-card:nth-child(odd) { border-right: 1px solid var(--hairline); }
   .tool-card:nth-child(even) { padding-left: 3vw; padding-right: 0; }
   .tool-card .tool-top {
@@ -323,7 +328,6 @@
     color: #2E7A3A;
     white-space: nowrap;
   }
-  .tool-state.review { color: #a04b59; }
 
   /* ================= sections ================= */
   section { padding-top: 16vh; padding-bottom: 4vh; }
@@ -524,54 +528,53 @@
     text-wrap: pretty;
   }
 
-  /* ================= link underline sweep ================= */
-  .sweep {
-    position: relative;
-    text-decoration: none;
-    padding-bottom: 3px;
+  /* ================= traits ================= */
+  .traits { padding-top: 20vh; padding-bottom: 8vh; }
+  .traits-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 7vw;
+    align-items: end;
+    padding: 58px 0 50px;
+    border-bottom: 1px solid var(--hairline);
   }
-  .sweep::before, .sweep::after {
-    content: "";
-    position: absolute;
-    left: 0; bottom: 0;
-    width: 100%; height: 1.5px;
-    background: currentColor;
+  .traits-intro h3 {
+    font-family: var(--latin);
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
   }
-  .sweep::before { transform: scaleX(1); transform-origin: right; transition: transform 0.75s var(--ease-out) 0.25s; }
-  .sweep::after { transform: scaleX(0); transform-origin: left; transition: transform 0.75s var(--ease-out) 0s; }
-  .sweep:hover::before { transform: scaleX(0); transition-delay: 0s; }
-  .sweep:hover::after { transform: scaleX(1); transition-delay: 0.25s; }
-
-  /* ================= contact ================= */
-  .contact { padding-top: 20vh; padding-bottom: 6vh; }
-  .contact .lead {
+  .traits-intro p {
+    max-width: 42ch;
+    color: #4a4a46;
+    font-size: 15px;
+    text-wrap: pretty;
+  }
+  .trait-list { list-style: none; }
+  .trait-item {
+    display: grid;
+    grid-template-columns: 64px minmax(180px, 0.65fr) minmax(0, 1.35fr);
+    gap: 3vw;
+    align-items: baseline;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .trait-item .trait-no {
     font-family: var(--latin);
     font-size: 12px;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
     color: var(--gray);
-    margin-bottom: 3.5vh;
   }
-  .contact h2 {
-    font-weight: 700;
-    font-size: clamp(1.9rem, 4.6vw, 3.8rem);
+  .trait-item h3 {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
     line-height: 1.4;
-    max-width: 26ch;
   }
-  .contact h2 .mline-wrap { display: block; overflow: hidden; }
-  .contact h2 .mline { display: block; }
-  .contact .mail-wrap { margin-top: 7vh; }
-  .contact .mail {
-    font-family: var(--latin);
-    font-weight: 400;
-    font-size: clamp(1.3rem, 3.6vw, 2.8rem);
-    letter-spacing: 0.02em;
-  }
-  .contact .socials {
-    margin-top: 6vh;
-    display: flex;
-    gap: 34px;
+  .trait-item p {
+    max-width: 54ch;
+    color: #4a4a46;
     font-size: 14px;
+    text-wrap: pretty;
   }
 
   footer {
@@ -608,6 +611,9 @@
     .netease-featured .company-head { grid-template-columns: 1fr; gap: 8px; }
     .netease-featured .when { grid-column: 2; grid-row: 2; margin-top: 8px; }
     .netease-featured .netease-projects { grid-column: 2; grid-template-columns: 1fr; margin-top: 22px; }
+    .traits-intro { grid-template-columns: 1fr; gap: 28px; }
+    .trait-item { grid-template-columns: 40px 1fr; gap: 8px 16px; }
+    .trait-item p { grid-column: 2; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -632,12 +638,12 @@
       <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
       <li><a class="roll" href="#experience"><span data-after="Career">经历</span></a></li>
       <li><a class="roll" href="#about"><span data-after="Off Duty">之外</span></a></li>
-      <li><a class="roll" href="#contact"><span data-after="Contact">联系</span></a></li>
+      <li><a class="roll" href="#traits"><span data-after="Traits">特质</span></a></li>
     </ul>
   </nav>
   <div class="clock" aria-label="当前状态">
     <span class="dot" aria-hidden="true"></span>
-    <span>OPEN TO AI PM ROLES</span>
+    <span>SHIPPING AI PRODUCTS</span>
     <span id="clock">--:--</span>
   </div>
 </header>
@@ -681,12 +687,12 @@
       <h3>39K+<span>已发布工具累计下载</span></h3>
       <p class="lab-note">
         从一个情绪或社交场景出发，独立完成概念、交互、视觉、开发、提审与版本迭代。用下载数据判断真实需求，而不是把 Demo 停在本地。
-        <small>3 published · 4 tools · Data captured 2026.08.26</small>
+        <small>3 published · 3 tools · Data captured 2026.08.26</small>
       </p>
     </div>
 
     <div class="tool-grid" aria-label="小红书小工具数据">
-      <article class="tool-card">
+      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a5a06b3000000000f008bc2?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YBvp34KlaGUlmrJz-VF5V7uPn5NbNX4hd1iiWkkZmb1Cg=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看 Let's 显化小红书笔记">
         <div class="tool-top">
           <div>
             <span class="tool-index">MT-01</span>
@@ -697,11 +703,11 @@
         </div>
         <div class="tool-data">
           <span class="downloads">30K+<small>downloads</small></span>
-          <span class="tool-state">已发布</span>
+          <span class="tool-state">已发布 ↗</span>
         </div>
-      </article>
+      </a>
 
-      <article class="tool-card">
+      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a8889e4000000003301071a?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YB_DnDqyNFwVvqjwp557mz-LJmYHCrxW5Gf9NuF5-UrFE=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看双人表情包合拍小红书笔记">
         <div class="tool-top">
           <div>
             <span class="tool-index">MT-02</span>
@@ -712,11 +718,11 @@
         </div>
         <div class="tool-data">
           <span class="downloads">6,636<small>downloads</small></span>
-          <span class="tool-state">已发布</span>
+          <span class="tool-state">已发布 ↗</span>
         </div>
-      </article>
+      </a>
 
-      <article class="tool-card">
+      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a8c68f6000000002a02c5ec?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YBShswXtWWtoB2KN9-zfqEqWOL_eBWaUeFHY0e9DDEefo=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看 Y2K 彩钻贴纸小红书笔记">
         <div class="tool-top">
           <div>
             <span class="tool-index">MT-03</span>
@@ -727,24 +733,9 @@
         </div>
         <div class="tool-data">
           <span class="downloads">2,417<small>downloads</small></span>
-          <span class="tool-state">已发布</span>
+          <span class="tool-state">已发布 ↗</span>
         </div>
-      </article>
-
-      <article class="tool-card">
-        <div class="tool-top">
-          <div>
-            <span class="tool-index">MT-04</span>
-            <h3>DivaTI · 流行天后测试</h3>
-            <p class="tool-desc">把人格测试与流行文化角色结合，探索结果卡片的传播与社交表达。</p>
-          </div>
-          <span class="tool-version">V1.0.2</span>
-        </div>
-        <div class="tool-data">
-          <span class="downloads">0<small>downloads</small></span>
-          <span class="tool-state review">未通过 · 待重传</span>
-        </div>
-      </article>
+      </a>
     </div>
   </section>
 
@@ -752,7 +743,7 @@
   <section id="work" class="container">
     <div class="sec-label">
       <h2><span class="mline">精选作品<span class="en">Selected Work</span></span></h2>
-      <span class="count">5 Projects</span>
+      <span class="count">4 Projects</span>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
@@ -780,11 +771,12 @@
         <p class="sub">Which Diva Are You</p>
       </div>
       <p class="desc">
-        MBTI × Diva 主题的人格测试，题目体系、结果卡片与传播链路独立完成，已上线中英双版。
+        MBTI × Diva 主题的人格测试，题目体系、结果卡片与传播链路独立完成；网站累计访问 35 万+，获得测试结果用户 180,337 UV。
         <span class="role">策划 · 题目与结果体系 · 开发上线 · 数据复盘</span>
       </p>
       <div class="end">
-        <span class="badge live">Live · dvti.top</span>
+        <span class="badge live">350K+ Visits</span>
+        <span class="badge">180,337 Result UV</span>
         <span class="arrow" aria-hidden="true">&#8599;</span>
       </div>
       <span class="rule" aria-hidden="true"></span>
@@ -822,22 +814,6 @@
       <span class="rule" aria-hidden="true"></span>
     </div>
 
-    <a class="row" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3/6a5a06b3000000000f008bc2?xsec_token=ABIHK82aoCTsn6XspO7KEtqMytSFG_i7BNHlypzVpY3Sg=&xsec_source=pc_user" target="_blank" rel="noopener">
-      <span class="no">05</span>
-      <div>
-        <h3><span class="mline">宇宙订单</span></h3>
-        <p class="sub">Universe Order</p>
-      </div>
-      <p class="desc">
-        显化主题的「下单」小工具：把愿望写成一张可提交的订单，整页从星云图取色。小红书笔记下方附小工具入口。
-        <span class="role">产品概念 · 视觉与交互 · Vibe Coding</span>
-      </p>
-      <div class="end">
-        <span class="badge live">笔记 · 小红书</span>
-        <span class="arrow" aria-hidden="true">&#8599;</span>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-    </a>
   </section>
 
   <!-- ================= experience ================= -->
@@ -944,28 +920,52 @@
     </ul>
   </section>
 
-  <!-- ================= contact ================= -->
-  <section id="contact" class="contact container">
-    <p class="lead">Let's Connect</p>
-    <h2>
-      <span class="mline-wrap"><span class="mline">正在看 AI 产品方向的机会，</span></span>
-      <span class="mline-wrap"><span class="mline">欢迎邮件联系。</span></span>
-    </h2>
-    <p class="mail-wrap">
-      <a class="mail sweep" href="mailto:chinnchang123@gmail.com">chinnchang123@gmail.com</a>
-    </p>
-    <div class="socials">
-      <a class="roll" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3" target="_blank" rel="noopener"><span data-after="Rednote">小红书</span></a>
-      <a class="roll" href="mailto:chinnchang123@gmail.com"><span data-after="Email">邮箱</span></a>
-      <a class="roll" href="#top"><span data-after="Top">回到顶部</span></a>
+  <!-- ================= traits ================= -->
+  <section id="traits" class="traits container">
+    <div class="sec-label">
+      <h2><span class="mline">个人特质<span class="en">What I Bring</span></span></h2>
+      <span class="count">Builder mindset</span>
+      <span class="rule" aria-hidden="true"></span>
     </div>
+    <div class="traits-intro">
+      <h3>Think clearly.<br />Ship fast.</h3>
+      <p>既能把 AI 能力拆成可落地的产品体验，也愿意亲手做出原型、上线验证，再用真实用户反馈继续迭代。</p>
+    </div>
+    <ul class="trait-list">
+      <li class="trait-item">
+        <span class="trait-no">T-01</span>
+        <h3>AI Builder</h3>
+        <p>从产品定义、Prompt 与交互到 Vibe Coding，能独立把想法做成可使用、可验证的产品。</p>
+      </li>
+      <li class="trait-item">
+        <span class="trait-no">T-02</span>
+        <h3>数据驱动</h3>
+        <p>用下载、访问、转化与用户行为验证判断，让数据参与每一轮产品取舍。</p>
+      </li>
+      <li class="trait-item">
+        <span class="trait-no">T-03</span>
+        <h3>行动力强</h3>
+        <p>快速拆解问题、推进协作并交付结果；面对模糊需求，先做出可讨论的版本。</p>
+      </li>
+      <li class="trait-item">
+        <span class="trait-no">T-04</span>
+        <h3>内容 Sense</h3>
+        <p>理解内容表达、情绪价值与传播语境，能把产品机制转化为用户愿意分享的体验。</p>
+      </li>
+      <li class="trait-item">
+        <span class="trait-no">T-05</span>
+        <h3>趋势与用户敏感度</h3>
+        <p>持续观察新技术、新内容趋势与用户需求变化，快速识别值得验证的机会。</p>
+      </li>
+    </ul>
   </section>
 
 </main>
 
 <footer>
   <span>© 2026 carazhang</span>
-  <span>AI Product — Base 不限</span>
+  <span>AI Product · Builder · Content Sense</span>
+  <a class="roll" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3" target="_blank" rel="noopener"><span data-after="Rednote">小红书</span></a>
   <a class="roll" href="#top"><span data-after="Back to top">Back to top</span></a>
 </footer>
 
@@ -1053,23 +1053,17 @@
   });
 
   /* ---------- rows (ref: title line mask, then children opacity-only random stagger) ---------- */
-  gsap.utils.toArray('.row, .era-list li, .tool-card, .tool-overview').forEach(function (row) {
+  gsap.utils.toArray('.row, .era-list li, .tool-card, .tool-overview, .trait-item, .traits-intro').forEach(function (row) {
     var tl = gsap.timeline({
       scrollTrigger: { trigger: row, start: 'top 85%' }
     });
     var line = row.querySelector('.mline');
     if (line) tl.fromTo(line, { y: '110%' }, { y: '0%', duration: 0.85, ease: 'power3.inOut' });
-    var fades = row.querySelectorAll('.no, .sub, .desc, .end, .dir, .when, .tool-top, .tool-data, .lab-note');
+    var fades = row.querySelectorAll('.no, .sub, .desc, .end, .dir, .when, .tool-top, .tool-data, .lab-note, .trait-no, .trait-item h3, .trait-item p, .traits-intro h3, .traits-intro p');
     if (fades.length) tl.fromTo(fades, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', stagger: { from: 'random', amount: 0.25 } }, '<0.25');
     var rule = row.querySelector('.rule');
     if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
   });
-
-  /* ---------- contact ---------- */
-  gsap.timeline({ scrollTrigger: { trigger: '#contact', start: 'top 75%' } })
-    .fromTo('#contact .lead', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' })
-    .fromTo('#contact h2 .mline', { y: '110%' }, { y: '0%', duration: 0.85, stagger: 0.1, ease: 'power3.inOut' }, '<')
-    .fromTo(['#contact .mail-wrap', '#contact .socials'], { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', stagger: 0.15 }, '<0.4');
 
   /* ---------- marquee (ref: gsap x loop, hover decelerates to stop, leave resumes) ---------- */
   (function () {
