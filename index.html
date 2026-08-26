@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>carazhang — AI 产品经理 · Portfolio</title>
+<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理，经历网易游戏、字节跳动与快手；主导 AI 精灵、率土 AI 配将、AI 美术生图管线与暴雪 AI 客服，并独立上线多款小红书小工具。" />
+<meta property="og:title" content="carazhang — AI 产品经理" />
+<meta property="og:description" content="AI 策略产品工作与独立产品实验：从游戏 AI 到 3.9 万+ 下载的小红书工具。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="__SITE_ORIGIN__/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="carazhang — AI 产品经理" />
+<meta name="twitter:description" content="游戏 AI、智能体与 3.9 万+ 下载的独立产品实验。" />
+<meta name="twitter:image" content="__SITE_ORIGIN__/og.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --ink: #0A0A0A;
+    --gray: #8C8C8C;
+    --hairline: #DDDCD8;
+    --hover-bg: #F1F0EC;
+
+    --latin: "Outfit", sans-serif;
+    --sans: "Noto Sans SC", -apple-system, "PingFang SC", sans-serif;
+
+    --ease-out: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html.lenis, html.lenis body { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--ink); color: var(--bg); }
+
+  a { color: inherit; }
+
+  :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+  .skip-link {
+    position: fixed;
+    left: 16px;
+    top: 12px;
+    z-index: 200;
+    padding: 8px 12px;
+    background: var(--ink);
+    color: var(--bg);
+    text-decoration: none;
+    transform: translateY(-160%);
+    transition: transform 0.2s ease;
+  }
+  .skip-link:focus { transform: none; }
+
+  main { width: 100%; max-width: 100%; overflow-x: hidden; }
+
+  .container { padding-left: 4vw; padding-right: 4vw; }
+
+  /* ================= header ================= */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 4vw;
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .brand {
+    font-family: var(--latin);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-decoration: none;
+  }
+  .brand sup { font-weight: 400; font-size: 9px; letter-spacing: 0; }
+
+  nav ul {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  /* roll-up text swap */
+  .roll {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .roll > span {
+    display: block;
+    position: relative;
+    transition: transform 0.45s var(--ease-out);
+  }
+  .roll > span::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 100%; left: 0;
+    width: 100%; height: 100%;
+    color: var(--gray);
+  }
+  .roll:hover > span { transform: translateY(-100%); }
+
+  .clock {
+    justify-self: end;
+    font-family: var(--latin);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .clock .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #3FA34D;
+    animation: blink 2.4s ease-in-out infinite;
+  }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+  /* ================= hero ================= */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 20vh;
+    padding-bottom: 9vh;
+  }
+  .hero .meta-line {
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 4vh;
+  }
+  .hero h1 {
+    font-weight: 700;
+    font-size: clamp(2.5rem, 7.2vw, 6rem);
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    max-width: 100%;
+  }
+  .hero h1 .line { display: block; overflow: hidden; }
+  .hero h1 .word { display: inline-block; white-space: nowrap; }
+  .hero h1 .char { display: inline-block; will-change: transform; }
+  .hero h1 .en {
+    font-family: var(--latin);
+    font-weight: 300;
+    font-size: 0.6em;
+    color: var(--gray);
+  }
+  .hero .intro {
+    margin-top: 6vh;
+    display: grid;
+    grid-template-columns: minmax(0, 60ch) 1fr;
+    gap: 24px;
+  }
+  .hero .intro p {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    color: #3d3d3a;
+  }
+  .hero .intro p b { font-weight: 500; color: var(--ink); }
+  .hero .down {
+    justify-self: end;
+    align-self: end;
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* ================= marquee ================= */
+  .marquee {
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    overflow: hidden;
+    padding: 14px 0;
+  }
+  .marquee .track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+  .marquee span {
+    font-family: var(--latin);
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gray);
+    white-space: nowrap;
+    padding-right: 3em;
+  }
+
+  /* ================= xhs mini tools ================= */
+  .tool-lab { padding-top: 12vh; }
+  .tool-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    gap: 7vw;
+    align-items: end;
+    padding: 56px 0 44px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .tool-overview h3 {
+    font-family: var(--latin);
+    font-size: clamp(3.6rem, 9vw, 8.5rem);
+    font-weight: 300;
+    line-height: 0.82;
+    letter-spacing: -0.055em;
+    font-variant-numeric: tabular-nums;
+  }
+  .tool-overview h3 span {
+    display: block;
+    margin-top: 22px;
+    font-family: var(--sans);
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+  .tool-overview .lab-note {
+    max-width: 46ch;
+    font-size: 15px;
+    color: #4a4a46;
+    text-wrap: pretty;
+  }
+  .tool-overview .lab-note small {
+    display: block;
+    margin-top: 18px;
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .tool-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tool-card {
+    min-height: 250px;
+    padding: 36px 3vw 40px 0;
+    border-bottom: 1px solid var(--hairline);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .tool-card:nth-child(odd) { border-right: 1px solid var(--hairline); }
+  .tool-card:nth-child(even) { padding-left: 3vw; padding-right: 0; }
+  .tool-card .tool-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .tool-card .tool-index,
+  .tool-card .tool-version {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .tool-card h3 {
+    margin-top: 16px;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    line-height: 1.35;
+    text-wrap: balance;
+  }
+  .tool-card .tool-desc {
+    margin-top: 10px;
+    color: #4a4a46;
+    font-size: 14px;
+    max-width: 42ch;
+  }
+  .tool-card .tool-data {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .tool-card .downloads {
+    font-family: var(--latin);
+    font-weight: 300;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    font-variant-numeric: tabular-nums;
+  }
+  .tool-card .downloads small {
+    display: block;
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .tool-state {
+    font-size: 12px;
+    color: #2E7A3A;
+    white-space: nowrap;
+  }
+  .tool-state.review { color: #a04b59; }
+
+  /* ================= sections ================= */
+  section { padding-top: 16vh; padding-bottom: 4vh; }
+
+  .sec-label {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 18px;
+    position: relative;
+  }
+  .sec-label .rule {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .sec-label h2 {
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    line-height: 1.3;
+    overflow: hidden;
+  }
+  .sec-label h2 .mline { display: block; }
+  .sec-label h2 .en {
+    font-family: var(--latin);
+    font-weight: 300;
+    color: var(--gray);
+    margin-left: 14px;
+    font-size: 0.72em;
+  }
+  .sec-label .count {
+    font-family: var(--latin);
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  /* ================= work rows ================= */
+  .row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1.15fr) minmax(0, 1fr) auto;
+    gap: 3vw;
+    align-items: baseline;
+    padding: 44px 0;
+    text-decoration: none;
+    position: relative;
+    transition: background 0.5s var(--ease-out), padding-left 0.5s var(--ease-out), padding-right 0.5s var(--ease-out);
+  }
+  .row .rule {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: var(--hairline);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  a.row:hover { background: var(--hover-bg); padding-left: 18px; padding-right: 18px; }
+
+  .row .no {
+    font-family: var(--latin);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--gray);
+  }
+  .row h3 {
+    font-weight: 700;
+    font-size: clamp(1.35rem, 2.6vw, 2rem);
+    line-height: 1.4;
+    overflow: hidden;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .row h3 .mline { display: block; }
+  a.row:hover h3 { transform: translateX(10px); }
+  .row .sub {
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 6px;
+  }
+  .row .desc { font-size: 14px; color: #4a4a46; max-width: 44ch; }
+  .row .desc .role { display: block; margin-top: 10px; font-size: 12.5px; color: var(--gray); }
+
+  .row .end {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    white-space: nowrap;
+  }
+  .badge {
+    font-family: var(--latin);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    color: var(--gray);
+  }
+  .badge.live { border-color: #3FA34D; color: #2E7A3A; }
+  .row .arrow {
+    font-family: var(--latin);
+    font-size: 20px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  }
+  a.row:hover .arrow { opacity: 1; transform: none; }
+
+  /* ================= experience ================= */
+  .era-list { list-style: none; padding-top: 2vh; }
+  .era-list li {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1.15fr) minmax(0, 1fr) auto;
+    gap: 3vw;
+    align-items: baseline;
+    padding: 34px 0;
+    position: relative;
+  }
+  .era-list .rule {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 1px;
+    background: var(--hairline);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .era-list .no {
+    font-family: var(--latin);
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--gray);
+  }
+  .era-list h3 {
+    font-weight: 700;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    line-height: 1.4;
+    overflow: hidden;
+  }
+  .era-list h3 .mline { display: block; }
+  .era-list .dir { font-size: 14px; color: #4a4a46; }
+  .era-list .when {
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gray);
+    white-space: nowrap;
+    justify-self: end;
+  }
+  .era-list li.netease-featured {
+    grid-template-columns: 64px minmax(0, 1fr) auto;
+    align-items: start;
+    padding-top: 44px;
+    padding-bottom: 48px;
+  }
+  .netease-featured .company-head {
+    display: grid;
+    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
+    gap: 3vw;
+    align-items: baseline;
+  }
+  .netease-featured .netease-projects {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 34px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+  .career-case {
+    min-height: 176px;
+    padding: 24px;
+    background: var(--bg);
+  }
+  .career-case .case-no {
+    font-family: var(--latin);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    color: var(--gray);
+  }
+  .career-case h4 {
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.35;
+  }
+  .career-case p {
+    margin-top: 9px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #5d5d58;
+    text-wrap: pretty;
+  }
+
+  /* ================= link underline sweep ================= */
+  .sweep {
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 3px;
+  }
+  .sweep::before, .sweep::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 1.5px;
+    background: currentColor;
+  }
+  .sweep::before { transform: scaleX(1); transform-origin: right; transition: transform 0.75s var(--ease-out) 0.25s; }
+  .sweep::after { transform: scaleX(0); transform-origin: left; transition: transform 0.75s var(--ease-out) 0s; }
+  .sweep:hover::before { transform: scaleX(0); transition-delay: 0s; }
+  .sweep:hover::after { transform: scaleX(1); transition-delay: 0.25s; }
+
+  /* ================= contact ================= */
+  .contact { padding-top: 20vh; padding-bottom: 6vh; }
+  .contact .lead {
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 3.5vh;
+  }
+  .contact h2 {
+    font-weight: 700;
+    font-size: clamp(1.9rem, 4.6vw, 3.8rem);
+    line-height: 1.4;
+    max-width: 26ch;
+  }
+  .contact h2 .mline-wrap { display: block; overflow: hidden; }
+  .contact h2 .mline { display: block; }
+  .contact .mail-wrap { margin-top: 7vh; }
+  .contact .mail {
+    font-family: var(--latin);
+    font-weight: 400;
+    font-size: clamp(1.3rem, 3.6vw, 2.8rem);
+    letter-spacing: 0.02em;
+  }
+  .contact .socials {
+    margin-top: 6vh;
+    display: flex;
+    gap: 34px;
+    font-size: 14px;
+  }
+
+  footer {
+    margin-top: 10vh;
+    padding: 26px 4vw 30px;
+    border-top: 1px solid var(--hairline);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-family: var(--latin);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+  footer a { text-decoration: none; }
+
+  /* ================= responsive ================= */
+  @media (max-width: 900px) {
+    header { grid-template-columns: 1fr auto; }
+    nav { display: none; }
+    .hero .intro { grid-template-columns: 1fr; }
+    .hero .down { display: none; }
+    .row, .era-list li { grid-template-columns: 40px 1fr; grid-template-rows: auto auto; gap: 8px 16px; padding: 30px 0; }
+    .row .desc, .era-list .dir { grid-column: 2; }
+    .row .end { grid-column: 2; flex-direction: row; align-items: center; }
+    .era-list .when { grid-column: 2; justify-self: start; }
+    .row .arrow { display: none; }
+    a.row:hover { padding-left: 0; padding-right: 0; }
+    .tool-overview { grid-template-columns: 1fr; gap: 34px; }
+    .tool-grid { grid-template-columns: 1fr; }
+    .tool-card, .tool-card:nth-child(even) { padding: 30px 0 34px; border-right: 0; }
+    .era-list li.netease-featured { grid-template-columns: 40px 1fr; }
+    .netease-featured .company-head { grid-template-columns: 1fr; gap: 8px; }
+    .netease-featured .when { grid-column: 2; grid-row: 2; margin-top: 8px; }
+    .netease-featured .netease-projects { grid-column: 2; grid-template-columns: 1fr; margin-top: 22px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    .sec-label .rule, .row .rule, .era-list .rule { transform: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+
+<header>
+  <a class="brand" href="#top">carazhang<sup>®</sup></a>
+  <nav aria-label="主导航">
+    <ul>
+      <li><a class="roll" href="#minitools"><span data-after="Mini tools">小工具</span></a></li>
+      <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
+      <li><a class="roll" href="#experience"><span data-after="Career">经历</span></a></li>
+      <li><a class="roll" href="#about"><span data-after="Off Duty">之外</span></a></li>
+      <li><a class="roll" href="#contact"><span data-after="Contact">联系</span></a></li>
+    </ul>
+  </nav>
+  <div class="clock" aria-label="当前状态">
+    <span class="dot" aria-hidden="true"></span>
+    <span>OPEN TO AI PM ROLES</span>
+    <span id="clock">--:--</span>
+  </div>
+</header>
+
+<main id="main-content">
+  <span id="top" aria-hidden="true"></span>
+
+  <!-- ================= hero ================= -->
+  <section class="hero container">
+    <p class="meta-line">carazhang — Portfolio, 2026</p>
+    <h1 id="heroTitle">
+      <span class="line">AI 策略产品经理</span>
+      <span class="line"><span class="en">AI Product Manager</span></span>
+    </h1>
+    <div class="intro">
+      <p>
+        毕业于<b>中国传媒大学</b>，3 年 AI 策略产品经验：
+        先后在<b>快手</b>做社区智能体、<b>字节跳动</b>做抖音 AI 搜索；目前在<b>网易游戏</b>推进 AI 精灵、率土 AI 配将、AI 美术生图管线与暴雪 AI 客服。
+        工作之外，也独立上线小红书工具并持续用数据迭代。
+      </p>
+      <p class="down">Scroll — 向下浏览</p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>AI Product</span><span>AI Agents</span><span>Game AI</span><span>AI Search</span><span>Growth Experiments</span><span>Vibe Coding</span>
+      <span>AI Product</span><span>AI Agents</span><span>Game AI</span><span>AI Search</span><span>Growth Experiments</span><span>Vibe Coding</span>
+    </div>
+  </div>
+
+  <!-- ================= xhs mini tools ================= -->
+  <section id="minitools" class="tool-lab container">
+    <div class="sec-label">
+      <h2><span class="mline">小红书工具实验室<span class="en">Rednote Mini Tools</span></span></h2>
+      <span class="count">Aug. 2026</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="tool-overview">
+      <h3>39K+<span>已发布工具累计下载</span></h3>
+      <p class="lab-note">
+        从一个情绪或社交场景出发，独立完成概念、交互、视觉、开发、提审与版本迭代。用下载数据判断真实需求，而不是把 Demo 停在本地。
+        <small>3 published · 4 tools · Data captured 2026.08.26</small>
+      </p>
+    </div>
+
+    <div class="tool-grid" aria-label="小红书小工具数据">
+      <article class="tool-card">
+        <div class="tool-top">
+          <div>
+            <span class="tool-index">MT-01</span>
+            <h3>Let's 显化 · 向宇宙下单</h3>
+            <p class="tool-desc">把愿望转化为一张有仪式感的宇宙订单，围绕分享与复访持续迭代。</p>
+          </div>
+          <span class="tool-version">V1.0.7</span>
+        </div>
+        <div class="tool-data">
+          <span class="downloads">30K+<small>downloads</small></span>
+          <span class="tool-state">已发布</span>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-top">
+          <div>
+            <span class="tool-index">MT-02</span>
+            <h3>双人表情包合拍</h3>
+            <p class="tool-desc">把两张人物照片组合成有梗的双人表情包，缩短从上传到分享的链路。</p>
+          </div>
+          <span class="tool-version">V1.0.1</span>
+        </div>
+        <div class="tool-data">
+          <span class="downloads">6,636<small>downloads</small></span>
+          <span class="tool-state">已发布</span>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-top">
+          <div>
+            <span class="tool-index">MT-03</span>
+            <h3>Y2K 彩钻贴纸</h3>
+            <p class="tool-desc">把照片转成千禧年彩钻贴纸风格，为头像、手帐和社交内容提供轻量素材。</p>
+          </div>
+          <span class="tool-version">V1.0.0</span>
+        </div>
+        <div class="tool-data">
+          <span class="downloads">2,417<small>downloads</small></span>
+          <span class="tool-state">已发布</span>
+        </div>
+      </article>
+
+      <article class="tool-card">
+        <div class="tool-top">
+          <div>
+            <span class="tool-index">MT-04</span>
+            <h3>DivaTI · 流行天后测试</h3>
+            <p class="tool-desc">把人格测试与流行文化角色结合，探索结果卡片的传播与社交表达。</p>
+          </div>
+          <span class="tool-version">V1.0.2</span>
+        </div>
+        <div class="tool-data">
+          <span class="downloads">0<small>downloads</small></span>
+          <span class="tool-state review">未通过 · 待重传</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= selected work ================= -->
+  <section id="work" class="container">
+    <div class="sec-label">
+      <h2><span class="mline">精选作品<span class="en">Selected Work</span></span></h2>
+      <span class="count">5 Projects</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <a class="row" href="https://www.xiaohongshu.com/explore/6987559d000000001a024208?xsec_token=ABAkEYJigq4QP4vpJMoLxfTy5RymNHsFz0VChrN19MpSs=&xsec_source=pc_user" target="_blank" rel="noopener">
+      <span class="no">01</span>
+      <div>
+        <h3><span class="mline">Glam · AI 美妆工作室</span></h3>
+        <p class="sub">AI Makeup Studio</p>
+      </div>
+      <p class="desc">
+        基于四季个人色彩理论，AI 分析基调色，把整套妆容拆解为可跟随的步骤序列。
+        <span class="role">产品定义 · 色彩规则设计 · 全流程 Vibe Coding</span>
+      </p>
+      <div class="end">
+        <span class="badge live">Demo · 小红书</span>
+        <span class="arrow" aria-hidden="true">&#8599;</span>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+    </a>
+
+    <a class="row" href="https://dvti.top" target="_blank" rel="noopener">
+      <span class="no">02</span>
+      <div>
+        <h3><span class="mline">DivaTI · 人格测试</span></h3>
+        <p class="sub">Which Diva Are You</p>
+      </div>
+      <p class="desc">
+        MBTI × Diva 主题的人格测试，题目体系、结果卡片与传播链路独立完成，已上线中英双版。
+        <span class="role">策划 · 题目与结果体系 · 开发上线 · 数据复盘</span>
+      </p>
+      <div class="end">
+        <span class="badge live">Live · dvti.top</span>
+        <span class="arrow" aria-hidden="true">&#8599;</span>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+    </a>
+
+    <div class="row">
+      <span class="no">03</span>
+      <div>
+        <h3><span class="mline">樱花巡礼地图</span></h3>
+        <p class="sub">Sakura Pilgrimage Map</p>
+      </div>
+      <p class="desc">
+        樱花花期可视化地图：按花期阶段变化的 SVG 标记、花期时间轴与地点详情面板。
+        <span class="role">概念与交互设计 · 数据结构 · 前端实现</span>
+      </p>
+      <div class="end">
+        <span class="badge">Coming Soon</span>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="row">
+      <span class="no">04</span>
+      <div>
+        <h3><span class="mline">Inner Cabinet · 内在内阁</span></h3>
+        <p class="sub">Your Inner Cabinet</p>
+      </div>
+      <p class="desc">
+        多人格 AI 顾问对话应用：不同立场的 AI 角色围绕同一决策进行讨论，辅助梳理重大决策。
+        <span class="role">产品概念 · AI 人格体系 · React 全栈实现</span>
+      </p>
+      <div class="end">
+        <span class="badge">In Development</span>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <a class="row" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3/6a5a06b3000000000f008bc2?xsec_token=ABIHK82aoCTsn6XspO7KEtqMytSFG_i7BNHlypzVpY3Sg=&xsec_source=pc_user" target="_blank" rel="noopener">
+      <span class="no">05</span>
+      <div>
+        <h3><span class="mline">宇宙订单</span></h3>
+        <p class="sub">Universe Order</p>
+      </div>
+      <p class="desc">
+        显化主题的「下单」小工具：把愿望写成一张可提交的订单，整页从星云图取色。小红书笔记下方附小工具入口。
+        <span class="role">产品概念 · 视觉与交互 · Vibe Coding</span>
+      </p>
+      <div class="end">
+        <span class="badge live">笔记 · 小红书</span>
+        <span class="arrow" aria-hidden="true">&#8599;</span>
+      </div>
+      <span class="rule" aria-hidden="true"></span>
+    </a>
+  </section>
+
+  <!-- ================= experience ================= -->
+  <section id="experience" class="container">
+    <div class="sec-label">
+      <h2><span class="mline">经历<span class="en">Career</span></span></h2>
+      <span class="count">2023 — Now</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <ul class="era-list">
+      <li class="netease-featured">
+        <span class="no">C-01</span>
+        <div>
+          <div class="company-head">
+            <h3><span class="mline">网易游戏</span></h3>
+            <p class="dir">AI 策略产品 — 把大模型能力落进游戏体验、内容生产与客服服务链路</p>
+          </div>
+          <div class="netease-projects" aria-label="网易游戏重点 AI 项目">
+            <article class="career-case">
+              <span class="case-no">01 · AGENT</span>
+              <h4>AI 精灵</h4>
+              <p>围绕角色人设、对话体验与长期陪伴，推进游戏内 AI 精灵的产品策略与体验迭代。</p>
+            </article>
+            <article class="career-case">
+              <span class="case-no">02 · STRATEGY</span>
+              <h4>率土 AI 配将</h4>
+              <p>把复杂武将、战法与赛季规则转译为可交互的配将建议，降低策略决策门槛。</p>
+            </article>
+            <article class="career-case">
+              <span class="case-no">03 · PIPELINE</span>
+              <h4>AI 美术生图管线</h4>
+              <p>串联需求理解、提示词、生成与质量校验，推动 AI 素材从试验走向可复用生产流程。</p>
+            </article>
+            <article class="career-case">
+              <span class="case-no">04 · SERVICE</span>
+              <h4>暴雪 AI 客服</h4>
+              <p>从玩家意图识别与问题归因出发，优化 AI 应答、人工承接与服务数据闭环。</p>
+            </article>
+          </div>
+        </div>
+        <span class="when">2025.09 — Now</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">C-02</span>
+        <h3><span class="mline">字节跳动</span></h3>
+        <p class="dir">抖音 AI 策略产品 — AI 搜索入口 · AI 问答卡</p>
+        <span class="when">2025.03 — 2025.09</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">C-03</span>
+        <h3><span class="mline">快手</span></h3>
+        <p class="dir">评论互动策略产品 — 社区智能体「AI 小快」0-1 · 评论推荐策略</p>
+        <span class="when">2023.11 — 2025.03</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">C-04</span>
+        <h3><span class="mline">中国传媒大学</span></h3>
+        <p class="dir">新闻学本科 · 辅修计算传播</p>
+        <span class="when">Origin</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= off duty ================= -->
+  <section id="about" class="container">
+    <div class="sec-label">
+      <h2><span class="mline">工作之外<span class="en">Off Duty</span></span></h2>
+      <span class="count">Interests</span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <ul class="era-list">
+      <li>
+        <span class="no">O-01</span>
+        <h3><span class="mline">旅行</span></h3>
+        <p class="dir">澳大利亚 / 美国 / 法国 / 日本 / 韩国 / 印尼 / 泰国</p>
+        <span class="when">Travel</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">O-02</span>
+        <h3><span class="mline">音乐</span></h3>
+        <p class="dir">K-pop · 欧美流行 · 日摇 · 英伦摇滚</p>
+        <span class="when">Music</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">O-03</span>
+        <h3><span class="mline">二次元</span></h3>
+        <p class="dir">追番 · Cosplay：奇犽 / 明日香 / 空军（第五人格）/ 富江 / 玛奇玛</p>
+        <span class="when">ACG</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">O-04</span>
+        <h3><span class="mline">紫微斗数</span></h3>
+        <p class="dir">排盘与解读研究，做过 iztro × LLM 的小工具</p>
+        <span class="when">Side</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= contact ================= -->
+  <section id="contact" class="contact container">
+    <p class="lead">Let's Connect</p>
+    <h2>
+      <span class="mline-wrap"><span class="mline">正在看 AI 产品方向的机会，</span></span>
+      <span class="mline-wrap"><span class="mline">欢迎邮件联系。</span></span>
+    </h2>
+    <p class="mail-wrap">
+      <a class="mail sweep" href="mailto:chinnchang123@gmail.com">chinnchang123@gmail.com</a>
+    </p>
+    <div class="socials">
+      <a class="roll" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3" target="_blank" rel="noopener"><span data-after="Rednote">小红书</span></a>
+      <a class="roll" href="mailto:chinnchang123@gmail.com"><span data-after="Email">邮箱</span></a>
+      <a class="roll" href="#top"><span data-after="Top">回到顶部</span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 carazhang</span>
+  <span>AI Product — Base 不限</span>
+  <a class="roll" href="#top"><span data-after="Back to top">Back to top</span></a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script>
+(function () {
+  /* ---------- live clock (Asia/Shanghai) ---------- */
+  var clockEl = document.getElementById('clock');
+  function tickClock() {
+    try {
+      clockEl.textContent = new Intl.DateTimeFormat('zh-CN', {
+        hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Shanghai'
+      }).format(new Date()) + ' CST';
+    } catch (e) { clockEl.textContent = ''; }
+  }
+  tickClock();
+  setInterval(tickClock, 30000);
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof gsap === 'undefined') return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---------- Lenis smooth scroll ---------- */
+  if (typeof Lenis !== 'undefined') {
+    var lenis = new Lenis({ lerp: 0.1 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); lenis.scrollTo(target, { offset: -70 }); }
+      });
+    });
+  }
+
+  /* ---------- split helpers ---------- */
+  function splitChars(el, charClass) {
+    var frag = document.createDocumentFragment();
+    Array.prototype.slice.call(el.childNodes).forEach(function (node) {
+      var cls = node.nodeType === 1 ? node.className : '';
+      var text = node.textContent;
+      text.split(/(\s+)/).forEach(function (part) {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+        var word = document.createElement('span');
+        word.className = 'word' + (cls ? ' ' + cls : '');
+        part.split('').forEach(function (ch) {
+          var s = document.createElement('span');
+          s.className = charClass;
+          s.textContent = ch;
+          word.appendChild(s);
+        });
+        frag.appendChild(word);
+      });
+    });
+    el.innerHTML = '';
+    el.appendChild(frag);
+  }
+
+  /* ---------- hero entrance (ref: hero words y->0 stagger .025, desc opacity .75 power3.inOut) ---------- */
+  document.querySelectorAll('#heroTitle .line').forEach(function (line) { splitChars(line, 'char'); });
+
+  gsap.set('#heroTitle .char', { y: '115%' });
+
+  gsap.timeline({ delay: 0.15 })
+    .to('#heroTitle .char', { y: '0%', duration: 1, stagger: 0.025, ease: 'power4.inOut' })
+    .fromTo('header', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<')
+    .fromTo('.hero .meta-line', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<0.2')
+    .fromTo('.hero .intro > *', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut', stagger: 0.12 }, '-=0.6');
+
+  /* ---------- section headings (ref: lines y->0 stagger .1 dur .75; count random-ish fade at <0.25; replay on re-enter) ---------- */
+  gsap.utils.toArray('.sec-label').forEach(function (sec) {
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: sec, start: 'top 80%', toggleActions: 'play none none reset' }
+    });
+    tl.fromTo(sec.querySelectorAll('.mline'), { y: '110%' }, { y: '0%', duration: 0.75, stagger: 0.1, ease: 'power3.inOut' });
+    var count = sec.querySelector('.count');
+    if (count) tl.fromTo(count, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut' }, '<0.25');
+    var rule = sec.querySelector('.rule');
+    if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
+  });
+
+  /* ---------- rows (ref: title line mask, then children opacity-only random stagger) ---------- */
+  gsap.utils.toArray('.row, .era-list li, .tool-card, .tool-overview').forEach(function (row) {
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: row, start: 'top 85%' }
+    });
+    var line = row.querySelector('.mline');
+    if (line) tl.fromTo(line, { y: '110%' }, { y: '0%', duration: 0.85, ease: 'power3.inOut' });
+    var fades = row.querySelectorAll('.no, .sub, .desc, .end, .dir, .when, .tool-top, .tool-data, .lab-note');
+    if (fades.length) tl.fromTo(fades, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', stagger: { from: 'random', amount: 0.25 } }, '<0.25');
+    var rule = row.querySelector('.rule');
+    if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
+  });
+
+  /* ---------- contact ---------- */
+  gsap.timeline({ scrollTrigger: { trigger: '#contact', start: 'top 75%' } })
+    .fromTo('#contact .lead', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' })
+    .fromTo('#contact h2 .mline', { y: '110%' }, { y: '0%', duration: 0.85, stagger: 0.1, ease: 'power3.inOut' }, '<')
+    .fromTo(['#contact .mail-wrap', '#contact .socials'], { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', stagger: 0.15 }, '<0.4');
+
+  /* ---------- marquee (ref: gsap x loop, hover decelerates to stop, leave resumes) ---------- */
+  (function () {
+    var wrap = document.querySelector('.marquee');
+    var track = wrap && wrap.querySelector('.track');
+    if (!track) return;
+    var anim, hoverTween;
+    function create() {
+      var progress = anim ? anim.progress() : 0;
+      if (anim) anim.kill();
+      gsap.set(track, { x: 0 });
+      anim = gsap.to(track, { x: -(track.scrollWidth / 2), duration: 20, repeat: -1, ease: 'none' });
+      anim.progress(progress);
+    }
+    create();
+    wrap.addEventListener('mouseenter', function () {
+      if (hoverTween) hoverTween.kill();
+      hoverTween = gsap.to(anim, { timeScale: 0, duration: 0.8, ease: 'power2.out' });
+    });
+    wrap.addEventListener('mouseleave', function () {
+      if (hoverTween) hoverTween.kill();
+      anim.play();
+      hoverTween = gsap.to(anim, { timeScale: 1, duration: 0.8, ease: 'power2.out' });
+    });
+    var rt;
+    window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(create, 200); });
+  })();
+})();
+</script>
+</body>
+</html>
