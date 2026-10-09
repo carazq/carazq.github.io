@@ -1,5 +1,14 @@
 # carazhang Portfolio · 个人作品集网站
 
+线上地址：https://carazq.github.io
+
+## 改数据（不用写代码）
+
+作品列表和数字都在 `data.js` 里。在 GitHub 网页打开 `data.js` → 右上角铅笔 → 改数字 → Commit changes，1–2 分钟后网站自动更新。
+
+---
+
+
 黑白极简编辑风单页作品集，纯 HTML/CSS/JS（GSAP + Lenis 走 CDN），打开 `index.html` 即可预览。
 
 ## 2026-08 更新

@@ -4,15 +4,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>carazhang — AI 产品经理 · Portfolio</title>
-<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；独立上线 39K+ 下载的小红书工具，DivaTI 网站访问 35 万+。" />
+<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；独立产品累计 39K+ 下载，DivaTI 网站访问 35 万+。" />
 <meta property="og:title" content="carazhang — AI 产品经理" />
-<meta property="og:description" content="AI 策略产品工作与独立产品实验：从游戏 AI 到 3.9 万+ 下载的小红书工具。" />
+<meta property="og:description" content="AI 策略产品工作与独立产品实践：从游戏 AI 到 35 万+ 访问的消费产品。" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="__SITE_ORIGIN__/og.png" />
+<meta property="og:image" content="https://carazq.github.io/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="carazhang — AI 产品经理" />
 <meta name="twitter:description" content="游戏 AI、智能体与 3.9 万+ 下载的独立产品实验。" />
-<meta name="twitter:image" content="__SITE_ORIGIN__/og.png" />
+<meta name="twitter:image" content="https://carazq.github.io/og.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -211,122 +211,6 @@
     color: var(--gray);
     white-space: nowrap;
     padding-right: 3em;
-  }
-
-  /* ================= xhs mini tools ================= */
-  .tool-lab { padding-top: 12vh; }
-  .tool-overview {
-    display: grid;
-    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-    gap: 7vw;
-    align-items: end;
-    padding: 56px 0 44px;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .tool-overview h3 {
-    font-family: var(--latin);
-    font-size: clamp(3.6rem, 9vw, 8.5rem);
-    font-weight: 300;
-    line-height: 0.82;
-    letter-spacing: -0.055em;
-    font-variant-numeric: tabular-nums;
-  }
-  .tool-overview h3 span {
-    display: block;
-    margin-top: 22px;
-    font-family: var(--sans);
-    font-size: clamp(1rem, 1.5vw, 1.3rem);
-    font-weight: 500;
-    line-height: 1.5;
-    letter-spacing: 0;
-  }
-  .tool-overview .lab-note {
-    max-width: 46ch;
-    font-size: 15px;
-    color: #4a4a46;
-    text-wrap: pretty;
-  }
-  .tool-overview .lab-note small {
-    display: block;
-    margin-top: 18px;
-    font-family: var(--latin);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-  .tool-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .tool-card {
-    min-height: 250px;
-    padding: 36px 3vw 40px 0;
-    border-bottom: 1px solid var(--hairline);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 40px;
-    color: inherit;
-    text-decoration: none;
-    transition: opacity 0.25s ease;
-  }
-  a.tool-card:hover { opacity: 0.62; }
-  a.tool-card:active { transform: translateY(1px); }
-  .tool-card:nth-child(odd) { border-right: 1px solid var(--hairline); }
-  .tool-card:nth-child(even) { padding-left: 3vw; padding-right: 0; }
-  .tool-card .tool-top {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 24px;
-  }
-  .tool-card .tool-index,
-  .tool-card .tool-version {
-    font-family: var(--latin);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-  .tool-card h3 {
-    margin-top: 16px;
-    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
-    line-height: 1.35;
-    text-wrap: balance;
-  }
-  .tool-card .tool-desc {
-    margin-top: 10px;
-    color: #4a4a46;
-    font-size: 14px;
-    max-width: 42ch;
-  }
-  .tool-card .tool-data {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .tool-card .downloads {
-    font-family: var(--latin);
-    font-weight: 300;
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 0.9;
-    letter-spacing: -0.045em;
-    font-variant-numeric: tabular-nums;
-  }
-  .tool-card .downloads small {
-    display: block;
-    margin-top: 12px;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
-  .tool-state {
-    font-size: 12px;
-    color: #2E7A3A;
-    white-space: nowrap;
   }
 
   /* ================= sections ================= */
@@ -604,9 +488,6 @@
     .era-list .when { grid-column: 2; justify-self: start; }
     .row .arrow { display: none; }
     a.row:hover { padding-left: 0; padding-right: 0; }
-    .tool-overview { grid-template-columns: 1fr; gap: 34px; }
-    .tool-grid { grid-template-columns: 1fr; }
-    .tool-card, .tool-card:nth-child(even) { padding: 30px 0 34px; border-right: 0; }
     .era-list li.netease-featured { grid-template-columns: 40px 1fr; }
     .netease-featured .company-head { grid-template-columns: 1fr; gap: 8px; }
     .netease-featured .when { grid-column: 2; grid-row: 2; margin-top: 8px; }
@@ -625,6 +506,7 @@
     .sec-label .rule, .row .rule, .era-list .rule { transform: none !important; }
   }
 </style>
+<script src="data.js"></script>
 </head>
 <body>
 
@@ -634,7 +516,6 @@
   <a class="brand" href="#top">carazhang<sup>®</sup></a>
   <nav aria-label="主导航">
     <ul>
-      <li><a class="roll" href="#minitools"><span data-after="Mini tools">小工具</span></a></li>
       <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
       <li><a class="roll" href="#experience"><span data-after="Career">经历</span></a></li>
       <li><a class="roll" href="#about"><span data-after="Off Duty">之外</span></a></li>
@@ -662,7 +543,7 @@
       <p>
         毕业于<b>中国传媒大学</b>，3 年 AI 策略产品经验：
         先后在<b>快手</b>做社区智能体、<b>字节跳动</b>做抖音 AI 搜索；目前在<b>网易游戏</b>推进 AI 精灵、率土 AI 配将、AI 美术生图管线与暴雪 AI 客服。
-        工作之外，也独立上线小红书工具并持续用数据迭代。
+        工作之外，也独立完成产品从概念、开发到上线，并持续用真实数据迭代。
       </p>
       <p class="down">Scroll — 向下浏览</p>
     </div>
@@ -675,144 +556,32 @@
     </div>
   </div>
 
-  <!-- ================= xhs mini tools ================= -->
-  <section id="minitools" class="tool-lab container">
-    <div class="sec-label">
-      <h2><span class="mline">小红书工具实验室<span class="en">Rednote Mini Tools</span></span></h2>
-      <span class="count">Aug. 2026</span>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
-
-    <div class="tool-overview">
-      <h3>39K+<span>已发布工具累计下载</span></h3>
-      <p class="lab-note">
-        从一个情绪或社交场景出发，独立完成概念、交互、视觉、开发、提审与版本迭代。用下载数据判断真实需求，而不是把 Demo 停在本地。
-        <small>3 published · 3 tools · Data captured 2026.08.26</small>
-      </p>
-    </div>
-
-    <div class="tool-grid" aria-label="小红书小工具数据">
-      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a5a06b3000000000f008bc2?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YBvp34KlaGUlmrJz-VF5V7uPn5NbNX4hd1iiWkkZmb1Cg=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看 Let's 显化小红书笔记">
-        <div class="tool-top">
-          <div>
-            <span class="tool-index">MT-01</span>
-            <h3>Let's 显化 · 向宇宙下单</h3>
-            <p class="tool-desc">把愿望转化为一张有仪式感的宇宙订单，围绕分享与复访持续迭代。</p>
-          </div>
-          <span class="tool-version">V1.0.7</span>
-        </div>
-        <div class="tool-data">
-          <span class="downloads">30K+<small>downloads</small></span>
-          <span class="tool-state">已发布 ↗</span>
-        </div>
-      </a>
-
-      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a8889e4000000003301071a?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YB_DnDqyNFwVvqjwp557mz-LJmYHCrxW5Gf9NuF5-UrFE=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看双人表情包合拍小红书笔记">
-        <div class="tool-top">
-          <div>
-            <span class="tool-index">MT-02</span>
-            <h3>双人表情包合拍</h3>
-            <p class="tool-desc">把两张人物照片组合成有梗的双人表情包，缩短从上传到分享的链路。</p>
-          </div>
-          <span class="tool-version">V1.0.1</span>
-        </div>
-        <div class="tool-data">
-          <span class="downloads">6,636<small>downloads</small></span>
-          <span class="tool-state">已发布 ↗</span>
-        </div>
-      </a>
-
-      <a class="tool-card" href="https://www.xiaohongshu.com/discovery/item/6a8c68f6000000002a02c5ec?source=webshare&amp;xhsshare=pc_web&amp;xsec_token=YBShswXtWWtoB2KN9-zfqEqWOL_eBWaUeFHY0e9DDEefo=&amp;xsec_source=pc_share" target="_blank" rel="noopener" aria-label="查看 Y2K 彩钻贴纸小红书笔记">
-        <div class="tool-top">
-          <div>
-            <span class="tool-index">MT-03</span>
-            <h3>Y2K 彩钻贴纸</h3>
-            <p class="tool-desc">把照片转成千禧年彩钻贴纸风格，为头像、手帐和社交内容提供轻量素材。</p>
-          </div>
-          <span class="tool-version">V1.0.0</span>
-        </div>
-        <div class="tool-data">
-          <span class="downloads">2,417<small>downloads</small></span>
-          <span class="tool-state">已发布 ↗</span>
-        </div>
-      </a>
-    </div>
-  </section>
-
   <!-- ================= selected work ================= -->
   <section id="work" class="container">
     <div class="sec-label">
       <h2><span class="mline">精选作品<span class="en">Selected Work</span></span></h2>
-      <span class="count">4 Projects</span>
+      <span class="count" id="workCount"></span>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
-    <a class="row" href="https://www.xiaohongshu.com/explore/6987559d000000001a024208?xsec_token=ABAkEYJigq4QP4vpJMoLxfTy5RymNHsFz0VChrN19MpSs=&xsec_source=pc_user" target="_blank" rel="noopener">
-      <span class="no">01</span>
-      <div>
-        <h3><span class="mline">Glam · AI 美妆工作室</span></h3>
-        <p class="sub">AI Makeup Studio</p>
-      </div>
-      <p class="desc">
-        基于四季个人色彩理论，AI 分析基调色，把整套妆容拆解为可跟随的步骤序列。
-        <span class="role">产品定义 · 色彩规则设计 · 全流程 Vibe Coding</span>
-      </p>
-      <div class="end">
-        <span class="badge live">Demo · 小红书</span>
-        <span class="arrow" aria-hidden="true">&#8599;</span>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-    </a>
-
-    <a class="row" href="https://dvti.top" target="_blank" rel="noopener">
-      <span class="no">02</span>
-      <div>
-        <h3><span class="mline">DivaTI · 人格测试</span></h3>
-        <p class="sub">Which Diva Are You</p>
-      </div>
-      <p class="desc">
-        MBTI × Diva 主题的人格测试，题目体系、结果卡片与传播链路独立完成；网站累计访问 35 万+，获得测试结果用户 180,337 UV。
-        <span class="role">策划 · 题目与结果体系 · 开发上线 · 数据复盘</span>
-      </p>
-      <div class="end">
-        <span class="badge live">350K+ Visits</span>
-        <span class="badge">180,337 Result UV</span>
-        <span class="arrow" aria-hidden="true">&#8599;</span>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-    </a>
-
-    <div class="row">
-      <span class="no">03</span>
-      <div>
-        <h3><span class="mline">樱花巡礼地图</span></h3>
-        <p class="sub">Sakura Pilgrimage Map</p>
-      </div>
-      <p class="desc">
-        樱花花期可视化地图：按花期阶段变化的 SVG 标记、花期时间轴与地点详情面板。
-        <span class="role">概念与交互设计 · 数据结构 · 前端实现</span>
-      </p>
-      <div class="end">
-        <span class="badge">Coming Soon</span>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
-
-    <div class="row">
-      <span class="no">04</span>
-      <div>
-        <h3><span class="mline">Inner Cabinet · 内在内阁</span></h3>
-        <p class="sub">Your Inner Cabinet</p>
-      </div>
-      <p class="desc">
-        多人格 AI 顾问对话应用：不同立场的 AI 角色围绕同一决策进行讨论，辅助梳理重大决策。
-        <span class="role">产品概念 · AI 人格体系 · React 全栈实现</span>
-      </p>
-      <div class="end">
-        <span class="badge">In Development</span>
-      </div>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
+    <div id="workList"></div>
+    <script>
+      (function () {
+        var esc = function (t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML.replace(/"/g, '&quot;'); };
+        var list = window.WORKS || [];
+        document.getElementById('workCount').textContent = list.length + ' Projects';
+        document.getElementById('workList').outerHTML = list.map(function (w, i) {
+          var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; })
+            .concat((w.tags || []).map(function (b) { return '<span class="badge">' + esc(b) + '</span>'; })).join('');
+          return '<a class="row" href="' + esc(w.link) + '" target="_blank" rel="noopener">' +
+            '<span class="no">' + String(i + 1).padStart(2, '0') + '</span>' +
+            '<div><h3><span class="mline">' + esc(w.title) + '</span></h3><p class="sub">' + esc(w.en) + '</p></div>' +
+            '<p class="desc">' + esc(w.desc) + '<span class="role">' + esc(w.role) + '</span></p>' +
+            '<div class="end">' + badges + '<span class="arrow" aria-hidden="true">&#8599;</span></div>' +
+            '<span class="rule" aria-hidden="true"></span></a>';
+        }).join('');
+      })();
+    </script>
 
   </section>
 
