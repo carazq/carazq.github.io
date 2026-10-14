@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>carazhang — AI 产品经理 · Portfolio</title>
-<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；独立产品累计 39K+ 下载，DivaTI 网站访问 35 万+。" />
+<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；小红书作品最高 12.4 万人使用，DivaTI 网站访问 35 万+。" />
 <meta property="og:title" content="carazhang — AI 产品经理" />
-<meta property="og:description" content="AI 策略产品工作与独立产品实践：从游戏 AI 到 35 万+ 访问的消费产品。" />
+<meta property="og:description" content="AI 策略产品工作与独立产品实践：小红书作品最高 12.4 万人使用，DivaTI 网站访问 35 万+。" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://carazq.github.io/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="carazhang — AI 产品经理" />
-<meta name="twitter:description" content="游戏 AI、智能体与 3.9 万+ 下载的独立产品实验。" />
+<meta name="twitter:description" content="游戏 AI、智能体与独立产品实验。小红书作品最高 12.4 万人使用。" />
 <meta name="twitter:image" content="https://carazq.github.io/og.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -139,24 +139,33 @@
 
   /* ================= hero ================= */
   .hero {
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 20vh;
-    padding-bottom: 9vh;
+    padding-top: 22vh;
+    padding-bottom: 8vh;
   }
-  .hero .meta-line {
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 5vh;
+  }
+  .hero .meta-line,
+  .hero .down {
     font-family: var(--latin);
     font-size: 12px;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--gray);
-    margin-bottom: 4vh;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 4vw;
+    align-items: end;
   }
   .hero h1 {
     font-weight: 700;
-    font-size: clamp(2.5rem, 7.2vw, 6rem);
+    font-size: clamp(2.5rem, 6.4vw, 5.8rem);
     line-height: 1.18;
     letter-spacing: 0.01em;
     max-width: 100%;
@@ -170,26 +179,14 @@
     font-size: 0.6em;
     color: var(--gray);
   }
-  .hero .intro {
-    margin-top: 6vh;
-    display: grid;
-    grid-template-columns: minmax(0, 60ch) 1fr;
-    gap: 24px;
-  }
+  .hero .intro { padding-bottom: 0.6em; }
   .hero .intro p {
-    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    font-size: clamp(1rem, 1.3vw, 1.12rem);
+    line-height: 1.85;
     color: #3d3d3a;
+    max-width: 30em;
   }
   .hero .intro p b { font-weight: 500; color: var(--ink); }
-  .hero .down {
-    justify-self: end;
-    align-self: end;
-    font-family: var(--latin);
-    font-size: 12px;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    color: var(--gray);
-  }
 
   /* ================= marquee ================= */
   .marquee {
@@ -214,7 +211,7 @@
   }
 
   /* ================= sections ================= */
-  section { padding-top: 16vh; padding-bottom: 4vh; }
+  section { padding-top: 11vh; padding-bottom: 4vh; }
 
   .sec-label {
     display: flex;
@@ -257,7 +254,7 @@
     display: grid;
     grid-template-columns: 64px minmax(0, 1.15fr) minmax(0, 1fr) auto;
     gap: 3vw;
-    align-items: baseline;
+    align-items: start;
     padding: 44px 0;
     text-decoration: none;
     position: relative;
@@ -271,7 +268,7 @@
     transform: scaleX(0);
     transform-origin: left;
   }
-  a.row:hover { background: var(--hover-bg); padding-left: 18px; padding-right: 18px; }
+  .row.has-link:hover { background: var(--hover-bg); padding-left: 18px; padding-right: 18px; }
 
   .row .no {
     font-family: var(--latin);
@@ -287,7 +284,7 @@
     transition: transform 0.5s var(--ease-out);
   }
   .row h3 .mline { display: block; }
-  a.row:hover h3 { transform: translateX(10px); }
+  .row.has-link:hover h3 { transform: translateX(10px); }
   .row .sub {
     font-family: var(--latin);
     font-size: 12px;
@@ -324,13 +321,13 @@
     transform: translateX(-10px);
     transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
   }
-  a.row:hover .arrow { opacity: 1; transform: none; }
+  .row.has-link:hover .arrow { opacity: 1; transform: none; }
 
   /* ================= experience ================= */
   .era-list { list-style: none; padding-top: 2vh; }
-  .era-list li {
+  .era-list > li {
     display: grid;
-    grid-template-columns: 64px minmax(0, 1.15fr) minmax(0, 1fr) auto;
+    grid-template-columns: 64px minmax(0, 0.7fr) minmax(0, 1.7fr) 150px;
     gap: 3vw;
     align-items: baseline;
     padding: 34px 0;
@@ -367,99 +364,118 @@
     white-space: nowrap;
     justify-self: end;
   }
-  .era-list li.netease-featured {
-    grid-template-columns: 64px minmax(0, 1fr) auto;
-    align-items: start;
-    padding-top: 44px;
-    padding-bottom: 48px;
-  }
-  .netease-featured .company-head {
-    display: grid;
-    grid-template-columns: minmax(180px, 0.55fr) minmax(0, 1.45fr);
-    gap: 3vw;
-    align-items: baseline;
-  }
+  .era-list > li.netease-featured { row-gap: 0; padding-top: 44px; padding-bottom: 48px; }
+  .era-points { list-style: none; margin-top: 4px; }
+  .era-points li { margin-top: 14px; }
+  .era-points b { display: block; font-weight: 500; font-size: 15px; color: var(--ink); }
+  .era-points span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.7; color: #6b6b65; }
+  /* projects reuse the company row's columns: title under company, stats under the role line */
   .netease-featured .netease-projects {
     grid-column: 2 / -1;
+    margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1px;
-    margin-top: 34px;
-    background: var(--hairline);
-    border: 1px solid var(--hairline);
+    grid-template-columns: subgrid;
   }
+  .netease-projects .career-case { grid-column: 1 / -1; display: grid; grid-template-columns: subgrid; }
+  .netease-projects .case-top { display: contents; }
+  .netease-projects .case-top > div:first-child { grid-column: 1; }
+  .netease-projects .case-top > div:last-child { grid-column: 2 / -1; }
+  .netease-projects .gallery { grid-column: 1 / -1; }
   .career-case {
-    min-height: 176px;
-    padding: 24px;
-    background: var(--bg);
+    padding: 36px 0 44px;
+    border-top: 1px solid var(--hairline);
+  }
+  .career-case:last-child { padding-bottom: 0; }
+  .case-top {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 3vw;
+    align-items: start;
   }
   .career-case .case-no {
     font-family: var(--latin);
-    font-size: 10px;
-    letter-spacing: 0.16em;
+    font-size: 11px;
+    letter-spacing: 0.18em;
     color: var(--gray);
   }
   .career-case h4 {
-    margin-top: 28px;
-    font-size: 17px;
-    line-height: 1.35;
-  }
-  .career-case p {
-    margin-top: 9px;
-    font-size: 13px;
-    line-height: 1.7;
-    color: #5d5d58;
-    text-wrap: pretty;
-  }
-
-  /* ================= traits ================= */
-  .traits { padding-top: 20vh; padding-bottom: 8vh; }
-  .traits-intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-    gap: 7vw;
-    align-items: end;
-    padding: 58px 0 50px;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .traits-intro h3 {
-    font-family: var(--latin);
-    font-size: clamp(3rem, 7vw, 7rem);
-    font-weight: 300;
-    line-height: 0.92;
-    letter-spacing: -0.05em;
-    text-wrap: balance;
-  }
-  .traits-intro p {
-    max-width: 42ch;
-    color: #4a4a46;
-    font-size: 15px;
-    text-wrap: pretty;
-  }
-  .trait-list { list-style: none; }
-  .trait-item {
-    display: grid;
-    grid-template-columns: 64px minmax(180px, 0.65fr) minmax(0, 1.35fr);
-    gap: 3vw;
-    align-items: baseline;
-    padding: 28px 0;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .trait-item .trait-no {
-    font-family: var(--latin);
-    font-size: 12px;
-    color: var(--gray);
-  }
-  .trait-item h3 {
-    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    margin-top: 10px;
+    font-size: clamp(1.1rem, 1.6vw, 1.35rem);
     line-height: 1.4;
   }
-  .trait-item p {
-    max-width: 54ch;
-    color: #4a4a46;
+  .career-case .case-lead {
+    margin-top: 10px;
     font-size: 14px;
+    line-height: 1.75;
+    color: #4a4a46;
+    max-width: 40ch;
     text-wrap: pretty;
   }
+  .case-points { margin-top: 10px; padding: 0; list-style: none; counter-reset: pt; font-size: 14px; line-height: 1.9; color: #4a4a46; }
+  .case-points li { counter-increment: pt; }
+  .case-points li::before { content: counter(pt, decimal-leading-zero); font-family: var(--latin); font-size: 11px; letter-spacing: 0.1em; color: var(--gray); margin-right: 12px; }
+  .case-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    gap: 22px 24px;
+    margin: 0;
+  }
+  .case-stats div { border-left: 1px solid var(--hairline); padding-left: 14px; }
+  .case-stats dt {
+    font-family: var(--latin);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .case-stats dd { margin-top: 6px; font-size: 12px; line-height: 1.5; color: #6b6b65; }
+  .case-note { margin-top: 16px; font-size: 11.5px; line-height: 1.7; color: var(--gray); }
+
+  /* gallery rows: flex-grow follows each image's aspect ratio, so every image in a row shares one height */
+  .gallery { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+  .g-row { display: flex; gap: 12px; }
+  .g-row figure { flex: var(--r) 1 0; min-width: 0; }
+  .gallery a { display: block; overflow: hidden; border-radius: 8px; background: var(--hover-bg); cursor: zoom-in; }
+  .gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s var(--ease-out);
+  }
+  .gallery a:hover img { transform: scale(1.03); }
+  .gallery figcaption { margin-top: 8px; font-size: 11.5px; color: var(--gray); }
+
+  /* lightbox */
+  .lightbox {
+    margin: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    max-width: 92vw;
+    max-height: 92vh;
+    overflow: visible;
+  }
+  .lightbox::backdrop { background: rgba(10, 10, 10, 0.86); }
+  .lightbox img { display: block; max-width: 92vw; max-height: 84vh; width: auto; height: auto; border-radius: 6px; }
+  .lightbox p { margin-top: 12px; font-size: 13px; color: #d6d6d0; text-align: center; }
+  .lightbox button {
+    position: fixed;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-family: var(--latin);
+    font-size: 28px;
+    line-height: 1;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+  .lightbox button:hover { opacity: 1; }
+  .lightbox .lb-close { top: 16px; right: 20px; }
+  .lightbox .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+  .lightbox .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
 
   footer {
     margin-top: 10vh;
@@ -480,21 +496,24 @@
   @media (max-width: 900px) {
     header { grid-template-columns: 1fr auto; }
     nav { display: none; }
-    .hero .intro { grid-template-columns: 1fr; }
+    .hero { padding-top: 20vh; padding-bottom: 7vh; }
+    .hero-grid { grid-template-columns: 1fr; gap: 4vh; }
     .hero .down { display: none; }
-    .row, .era-list li { grid-template-columns: 40px 1fr; grid-template-rows: auto auto; gap: 8px 16px; padding: 30px 0; }
-    .row .desc, .era-list .dir { grid-column: 2; }
+    .row, .era-list > li { grid-template-columns: 40px 1fr; grid-template-rows: auto auto; gap: 8px 16px; padding: 30px 0; }
+    .row .desc, .era-list .dir, .era-body { grid-column: 2; }
     .row .end { grid-column: 2; flex-direction: row; align-items: center; }
     .era-list .when { grid-column: 2; justify-self: start; }
     .row .arrow { display: none; }
-    a.row:hover { padding-left: 0; padding-right: 0; }
-    .era-list li.netease-featured { grid-template-columns: 40px 1fr; }
-    .netease-featured .company-head { grid-template-columns: 1fr; gap: 8px; }
-    .netease-featured .when { grid-column: 2; grid-row: 2; margin-top: 8px; }
-    .netease-featured .netease-projects { grid-column: 2; grid-template-columns: 1fr; margin-top: 22px; }
-    .traits-intro { grid-template-columns: 1fr; gap: 28px; }
-    .trait-item { grid-template-columns: 40px 1fr; gap: 8px 16px; }
-    .trait-item p { grid-column: 2; }
+    .row.has-link:hover { padding-left: 0; padding-right: 0; }
+    .netease-featured .netease-projects { grid-column: 1 / -1; margin-top: 22px; }
+    .netease-featured .netease-projects, .netease-projects .career-case { display: block; }
+    .netease-projects .case-top { display: grid; grid-template-columns: 1fr; gap: 22px; }
+    .case-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 16px; }
+    .gallery { gap: 10px; margin-top: 22px; }
+    .g-row { gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: -4vw; padding-right: 4vw; }
+    .g-row::-webkit-scrollbar { display: none; }
+    .g-row figure { flex: 0 0 calc(var(--r) * 150px); scroll-snap-align: start; }
+    .gallery figcaption { font-size: 11px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -504,6 +523,69 @@
       transition-duration: 0.01ms !important;
     }
     .sec-label .rule, .row .rule, .era-list .rule { transform: none !important; }
+  }
+
+  /* work rows: icon sits beside the title, preview under the description */
+  .work-title { display: flex; align-items: center; gap: 20px; min-width: 0; }
+  .work-title > div { min-width: 0; }
+  .work-icon {
+    flex: none;
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    border: 1px solid var(--hairline);
+    object-fit: cover;
+    overflow: hidden;
+    background: #fff;
+  }
+  .row .no { line-height: 56px; }
+  .row .desc { padding-top: 6px; }
+  .row .end { padding-top: 12px; }
+  .work-meta { font-family: var(--latin); font-size: 12px; letter-spacing: 0.04em; color: var(--gray); }
+  .row.has-link:hover .work-meta { color: var(--ink); }
+  .row { row-gap: 26px; }
+  .work-extra { grid-column: 2 / -1; min-width: 0; }
+  .work-media { display: flex; gap: 10px; }
+  .work-preview {
+    display: block;
+    min-width: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    background: var(--hover-bg);
+  }
+  .work-preview img, .work-preview video { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out); }
+  .row.has-link:hover .work-preview img, .row.has-link:hover .work-preview video { transform: scale(1.025); }
+  .row-link { position: absolute; inset: 0; z-index: 1; }
+  .proof { position: relative; z-index: 2; margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--hairline); max-width: 520px; }
+  .work-extra > .proof:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+  .work-qr { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px; width: fit-content; }
+  .work-media + .work-qr { margin-top: 18px; }
+  /* no media: QR and feedback sit side by side */
+  .work-extra:has(> .work-qr):not(:has(> .work-media)) { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px 56px; }
+  .work-extra:has(> .work-qr):not(:has(> .work-media)) > .proof { margin-top: 0; padding-top: 0; border-top: 0; }
+  .work-qr img { display: block; width: 112px; height: 112px; padding: 6px; background: #fff; border: 1px solid var(--hairline); border-radius: 10px; }
+  .work-qr p { font-size: 12px; color: #4a4a46; text-align: center; }
+  .proof p { font-size: 13px; color: #4a4a46; }
+  .proof-link { display: inline-block; margin-top: 6px; margin-right: 16px; font-family: var(--latin); font-size: 12px; color: var(--ink); text-underline-offset: 3px; }
+  .proof-shots { display: flex; gap: 8px; margin-top: 12px; }
+  .proof-shots a { display: block; height: 120px; border-radius: 6px; overflow: hidden; border: 1px solid var(--hairline); cursor: zoom-in; }
+  .proof-shots img { display: block; height: 100%; width: auto; transition: transform 0.5s var(--ease-out); }
+  .proof-shots a:hover img { transform: scale(1.05); }
+  .work-note, .work-source { font-size: 12px; color: #6b6b65; }
+  .work-note { padding: 20px 0 0; line-height: 1.8; }
+  .work-source { padding-top: 18px; }
+  .work-source summary { cursor: pointer; width: fit-content; }
+  .work-source img { display: block; width: 100%; height: auto; margin-top: 18px; }
+  @media (max-width: 900px) {
+    .row .no { line-height: 44px; }
+    .work-title { gap: 14px; }
+    .work-icon { width: 44px; height: 44px; border-radius: 11px; }
+    .row .desc, .row .end { padding-top: 0; }
+    .work-extra { grid-column: 2; }
+    .row .end { flex-wrap: wrap; white-space: normal; gap: 8px 12px; }
+    .clock span:nth-child(2) { display: none; }
   }
 </style>
 <script src="data.js"></script>
@@ -519,7 +601,6 @@
       <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
       <li><a class="roll" href="#experience"><span data-after="Career">经历</span></a></li>
       <li><a class="roll" href="#about"><span data-after="Off Duty">之外</span></a></li>
-      <li><a class="roll" href="#traits"><span data-after="Traits">特质</span></a></li>
     </ul>
   </nav>
   <div class="clock" aria-label="当前状态">
@@ -534,18 +615,21 @@
 
   <!-- ================= hero ================= -->
   <section class="hero container">
-    <p class="meta-line">carazhang — Portfolio, 2026</p>
-    <h1 id="heroTitle">
-      <span class="line">AI 策略产品经理</span>
-      <span class="line"><span class="en">AI Product Manager</span></span>
-    </h1>
-    <div class="intro">
-      <p>
-        毕业于<b>中国传媒大学</b>，3 年 AI 策略产品经验：
-        先后在<b>快手</b>做社区智能体、<b>字节跳动</b>做抖音 AI 搜索；目前在<b>网易游戏</b>推进 AI 精灵、率土 AI 配将、AI 美术生图管线与暴雪 AI 客服。
-        工作之外，也独立完成产品从概念、开发到上线，并持续用真实数据迭代。
-      </p>
+    <div class="hero-top">
+      <p class="meta-line">carazhang — Portfolio, 2026</p>
       <p class="down">Scroll — 向下浏览</p>
+    </div>
+    <div class="hero-grid">
+      <h1 id="heroTitle">
+        <span class="line">AI 策略产品经理</span>
+        <span class="line"><span class="en">AI Product Manager</span></span>
+      </h1>
+      <div class="intro">
+        <p>
+          毕业于<b>中国传媒大学</b>，3 年 AI 策略产品经验，先后就职于<b>快手</b>、<b>字节跳动</b>、<b>网易游戏</b>，做过社区智能体、AI 搜索与游戏 AI。
+          工作之外，独立完成产品从概念、开发到上线，并用真实数据迭代。
+        </p>
+      </div>
     </div>
   </section>
 
@@ -559,26 +643,56 @@
   <!-- ================= selected work ================= -->
   <section id="work" class="container">
     <div class="sec-label">
-      <h2><span class="mline">精选作品<span class="en">Selected Work</span></span></h2>
+      <h2><span class="mline">独立作品<span class="en">Side Projects</span></span></h2>
       <span class="count" id="workCount"></span>
       <span class="rule" aria-hidden="true"></span>
     </div>
 
+    <p class="work-note">小红书作品需在最新版小红书 App 内体验；电脑浏览器查看笔记需先登录小红书。使用人数更新于 2026-10-13。</p>
     <div id="workList"></div>
+    <details class="work-source">
+      <summary>查看使用数据来源 · 小红书创作后台截图</summary>
+      <img id="usageSource" width="1890" height="974" loading="lazy" alt="小红书创作后台：表情包合拍 4.5 万人、第五求生 78 人、Y2K 彩钻 7.1 万人、Let's 显化 12.4 万人、颠倒世界 1.3 万人使用" />
+    </details>
     <script>
       (function () {
         var esc = function (t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML.replace(/"/g, '&quot;'); };
-        var list = window.WORKS || [];
+        var list = (window.WORKS || []).filter(function (w) { return !w.hidden; });
+        var snapshot = window.XHS_SNAPSHOT;
+        document.getElementById('usageSource').src = snapshot.image;
         document.getElementById('workCount').textContent = list.length + ' Projects';
-        document.getElementById('workList').outerHTML = list.map(function (w, i) {
-          var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; })
-            .concat((w.tags || []).map(function (b) { return '<span class="badge">' + esc(b) + '</span>'; })).join('');
-          return '<a class="row" href="' + esc(w.link) + '" target="_blank" rel="noopener">' +
+        document.getElementById('workList').innerHTML = list.map(function (w, i) {
+          var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; }).join('');
+          var icon = w.icon ? '<img class="work-icon" src="' + esc(w.icon) + '" width="56" height="56" alt="" />'
+            : w.iconViewBox ? '<svg class="work-icon" viewBox="' + esc(w.iconViewBox) + '" aria-hidden="true"><image href="' + esc(snapshot.image) + '" width="1890" height="974" /></svg>' : '';
+          var action = !w.link ? '已在小红书发布' : /xiaohongshu\.com/.test(w.link) ? '查看小红书笔记 ↗' : '访问网站 ↗';
+          var meta = (w.tags || []).concat(action).map(esc).join(' · ');
+          var media = w.media || [];
+          var total = media.reduce(function (sum, m) { return sum + (m.ratio || 1.6); }, 0);
+          var preview = media.length ? '<div class="work-media" style="max-width:min(100%,' + Math.round(total * 320) + 'px)">' + media.map(function (m) {
+            var r = m.ratio || 1.6;
+            var inner = m.video
+              ? '<video src="' + esc(m.video) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : '') + ' muted loop playsinline preload="none" aria-label="' + esc(w.title) + ' 演示视频"></video>'
+              : '<img src="' + esc(m.image) + '" loading="lazy" alt="' + esc(w.title) + ' 截图" />';
+            return '<span class="work-preview" style="flex:' + Math.round(r * 100) + ' 1 0;aspect-ratio:' + r + '">' + inner + '</span>';
+          }).join('') + '</div>' : '';
+          var proof = '';
+          if (w.proof) {
+            proof = '<div class="proof"><p>' + esc(w.proof.text) + '</p>' +
+              (w.proof.links || []).map(function (l) { return '<a class="proof-link" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>'; }).join('') +
+              ((w.proof.images || []).length ? '<div class="proof-shots">' + w.proof.images.map(function (src) { return '<a href="' + esc(src) + '"><img src="' + esc(src) + '" loading="lazy" alt="' + esc(w.title) + ' 用户分享截图" /></a>'; }).join('') + '</div>' : '') +
+              '</div>';
+          }
+          var qr = w.qr ? '<div class="work-qr"><img src="' + esc(w.qr.image) + '" width="112" height="112" loading="lazy" alt="' + esc(w.title) + ' 微信小程序码" /><p>' + esc(w.qr.label) + '</p></div>' : '';
+          var open = '<article class="row' + (w.link ? ' has-link' : '') + '">' +
+            (w.link ? '<a class="row-link" href="' + esc(w.link) + '" target="_blank" rel="noopener" aria-label="' + esc(w.title) + '"></a>' : '');
+          return open +
             '<span class="no">' + String(i + 1).padStart(2, '0') + '</span>' +
-            '<div><h3><span class="mline">' + esc(w.title) + '</span></h3><p class="sub">' + esc(w.en) + '</p></div>' +
-            '<p class="desc">' + esc(w.desc) + '<span class="role">' + esc(w.role) + '</span></p>' +
-            '<div class="end">' + badges + '<span class="arrow" aria-hidden="true">&#8599;</span></div>' +
-            '<span class="rule" aria-hidden="true"></span></a>';
+            '<div class="work-title">' + icon + '<div><h3><span class="mline">' + esc(w.title) + '</span></h3>' + (w.en ? '<p class="sub">' + esc(w.en) + '</p>' : '') + '</div></div>' +
+            '<div class="desc"><p>' + esc(w.desc) + '</p>' + (w.role ? '<span class="role">' + esc(w.role) + '</span>' : '') + '</div>' +
+            '<div class="end">' + badges + '<span class="work-meta">' + meta + '</span></div>' +
+            (preview || qr || proof ? '<div class="work-extra">' + preview + qr + proof + '</div>' : '') +
+            '<span class="rule" aria-hidden="true"></span></article>';
         }).join('');
       })();
     </script>
@@ -595,48 +709,114 @@
     <ul class="era-list">
       <li class="netease-featured">
         <span class="no">C-01</span>
-        <div>
-          <div class="company-head">
-            <h3><span class="mline">网易游戏</span></h3>
-            <p class="dir">AI 策略产品 — 把大模型能力落进游戏体验、内容生产与客服服务链路</p>
-          </div>
-          <div class="netease-projects" aria-label="网易游戏重点 AI 项目">
-            <article class="career-case">
-              <span class="case-no">01 · AGENT</span>
-              <h4>AI 精灵</h4>
-              <p>围绕角色人设、对话体验与长期陪伴，推进游戏内 AI 精灵的产品策略与体验迭代。</p>
-            </article>
-            <article class="career-case">
-              <span class="case-no">02 · STRATEGY</span>
-              <h4>率土 AI 配将</h4>
-              <p>把复杂武将、战法与赛季规则转译为可交互的配将建议，降低策略决策门槛。</p>
-            </article>
-            <article class="career-case">
-              <span class="case-no">03 · PIPELINE</span>
-              <h4>AI 美术生图管线</h4>
-              <p>串联需求理解、提示词、生成与质量校验，推动 AI 素材从试验走向可复用生产流程。</p>
-            </article>
-            <article class="career-case">
-              <span class="case-no">04 · SERVICE</span>
-              <h4>暴雪 AI 客服</h4>
-              <p>从玩家意图识别与问题归因出发，优化 AI 应答、人工承接与服务数据闭环。</p>
-            </article>
-          </div>
-        </div>
+        <h3><span class="mline">网易游戏</span></h3>
+        <p class="dir">AI 策略产品 — 游戏 AI 助手、玩法策略与美术素材自动化</p>
         <span class="when">2025.09 — Now</span>
+        <div class="netease-projects" aria-label="网易游戏重点 AI 项目">
+          <article class="career-case">
+            <div class="case-top">
+              <div>
+                <span class="case-no">01 · AI ASSISTANT</span>
+                <h4>游戏精灵 · AI 助手与陪伴</h4>
+                <p class="case-lead">网易游戏内置的 AI 助手，提供智能问答、攻略百科与实用工具。与各游戏运营协作，负责回答效果优化、AI 管线搭建及 memory 等其他能力探索。</p>
+              </div>
+              <div>
+                <dl class="case-stats">
+                  <div><dt>100+</dt><dd>款海内外游戏接入</dd></div>
+                  <div><dt>&gt;1000 万次</dt><dd>每月服务量</dd></div>
+                  <div><dt>&gt;80%</dt><dd>部分游戏渗透率</dd></div>
+                  <div><dt>&gt;90%</dt><dd>玩家满意度</dd></div>
+                </dl>
+                <p class="case-note">精灵业务整体数据，截至 2025 年 9 月。</p>
+              </div>
+            </div>
+            <div class="gallery">
+              <div class="g-row">
+                <figure style="--r:1.78"><a href="assets/pidan-ai.jpg"><img src="assets/pidan-ai.jpg" width="1236" height="694" loading="lazy" alt="蛋仔皮蛋 AI 问答界面，展示角色回复与追问推荐" /></a><figcaption>蛋仔派对 · 皮蛋</figcaption></figure>
+                <figure style="--r:1.62"><a href="assets/sprite-theme.jpg"><img src="assets/sprite-theme.jpg" width="1212" height="750" loading="lazy" alt="智能助手主题选择：两种角色皮肤" /></a><figcaption>逆水寒 · 小暖 / 血河小狗</figcaption></figure>
+                <figure style="--r:1.78"><a href="assets/sprite-qa.jpg"><img src="assets/sprite-qa.jpg" width="1600" height="898" loading="lazy" alt="精灵问答界面：进度查询回复与“大家都在问”推荐" /></a><figcaption>燕云十六声 · 燕叽</figcaption></figure>
+                <figure style="--r:1.78"><a href="assets/sprite-space.jpg"><img src="assets/sprite-space.jpg" width="1380" height="776" loading="lazy" alt="精灵空间：角色形象、亲密度等级与语音、提醒入口" /></a><figcaption>大话西游手游 · 精灵空间</figcaption></figure>
+              </div>
+            </div>
+          </article>
+          <article class="career-case">
+            <div class="case-top">
+              <div>
+                <span class="case-no">02 · STRATEGY</span>
+                <h4>AI 配将</h4>
+                <ol class="case-points"><li>个性化配将与攻略推荐</li><li>AI 阵容解读</li><li>PVE / PVP 全场景方案等</li></ol>
+              </div>
+              <div>
+                <dl class="case-stats">
+                  <div><dt>0.7% → 2.0%</dt><dd>游戏内单日访问渗透</dd></div>
+                  <div><dt>6.9% → 12.4%</dt><dd>App 内工具单日访问渗透</dd></div>
+                </dl>
+                <p class="case-note">2026 年 3 月线上数据，两项分属不同访问场景。</p>
+              </div>
+            </div>
+            <div class="gallery">
+              <div class="g-row">
+                <figure style="--r:2.17"><a href="assets/lineup-slg.jpg"><img src="assets/lineup-slg.jpg" width="1600" height="739" loading="lazy" alt="AI 配将：大营、中军、前锋武将与推荐战法组合" /></a><figcaption>率土之滨 · 阵容与战法推荐</figcaption></figure>
+                <figure style="--r:0.59"><a href="assets/ai-lineup.jpeg"><img src="assets/ai-lineup.jpeg" width="471" height="803" loading="lazy" alt="AI 配将截图，展示队伍克制总结、阵容推荐和评价入口" /></a><figcaption>率土之滨 · 队伍克制解读</figcaption></figure>
+                <figure style="--r:1.82"><a href="assets/lineup-guide.jpg"><img src="assets/lineup-guide.jpg" width="1589" height="875" loading="lazy" alt="智能助手角色攻略卡：技能、御魂搭配与斗技阵容一键配置" /></a><figcaption>阴阳师 · 式神攻略与阵容配置</figcaption></figure>
+              </div>
+            </div>
+          </article>
+          <article class="career-case">
+            <div class="case-top">
+              <div>
+                <span class="case-no">03 · PIPELINE</span>
+                <h4>AI 美术素材自动化管线</h4>
+                <p class="case-lead">运营填表即可生成活动推送素材：风格图与布局模板分开控制，一次生成整图，并适配多尺寸与多语言。</p>
+              </div>
+              <div>
+                <dl class="case-stats">
+                  <div><dt>5 min</dt><dd>出图，原流程 4–5 天</dd></div>
+                  <div><dt>20+</dt><dd>款国内游戏接入</dd></div>
+                  <div><dt>400+</dt><dd>张素材产出</dd></div>
+                  <div><dt>+236%</dt><dd>UV 唤起率（A/B）</dd></div>
+                </dl>
+                <p class="case-note">截至 2026 年 3 月；唤起率 4.41% → 14.84% 为单次 A/B 实验结果。另为 9 款海外游戏搭建带文本本地化的生图模型。</p>
+              </div>
+            </div>
+            <div class="gallery">
+              <div class="g-row">
+                <figure style="--r:1.52"><a href="assets/art-kv-input.jpg"><img src="assets/art-kv-input.jpg" width="570" height="375" loading="lazy" alt="输入的 KV 风格图：角色与场景" /></a><figcaption>输入 · KV 风格图</figcaption></figure>
+                <figure style="--r:1.79"><a href="assets/art-newyear.jpg"><img src="assets/art-newyear.jpg" width="1376" height="768" loading="lazy" alt="生成的元旦活动推送素材，含标题、视频框与按钮" /></a><figcaption>输出 · 整图生成</figcaption></figure>
+                <figure style="--r:1.79"><a href="assets/art-circus.jpg"><img src="assets/art-circus.jpg" width="1600" height="893" loading="lazy" alt="生成的赛季开幕活动素材" /></a><figcaption>赛季活动</figcaption></figure>
+              </div>
+              <div class="g-row">
+                <figure style="--r:2.55"><a href="assets/art-festival.jpg"><img src="assets/art-festival.jpg" width="1600" height="627" loading="lazy" alt="生成的新春版本福利前瞻横幅" /></a><figcaption>版本福利</figcaption></figure>
+                <figure style="--r:2.40"><a href="assets/art-jp.jpg"><img src="assets/art-jp.jpg" width="1412" height="589" loading="lazy" alt="海外日语版推送素材" /></a><figcaption>海外 · 日语</figcaption></figure>
+                <figure style="--r:2.36"><a href="assets/art-en.jpg"><img src="assets/art-en.jpg" width="1414" height="600" loading="lazy" alt="海外英语版推送素材" /></a><figcaption>海外 · 英语</figcaption></figure>
+              </div>
+            </div>
+          </article>
+        </div>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
         <span class="no">C-02</span>
         <h3><span class="mline">字节跳动</span></h3>
-        <p class="dir">抖音 AI 策略产品 — AI 搜索入口 · AI 问答卡</p>
+        <div class="era-body">
+          <p class="dir">抖音 AI 策略产品 — AI 搜索</p>
+          <ul class="era-points">
+            <li><b>搜索结果页 AI 问答卡质量优化</b><span>增加高亮 · 切换 GlobalSearch 模型 · 拓展出卡意图等</span></li>
+            <li><b>右下角悬浮球增长优化</b><span>悬浮球引导条 · 纯视频意图优化</span></li>
+          </ul>
+        </div>
         <span class="when">2025.03 — 2025.09</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
         <span class="no">C-03</span>
         <h3><span class="mline">快手</span></h3>
-        <p class="dir">评论互动策略产品 — 社区智能体「AI 小快」0-1 · 评论推荐策略</p>
+        <div class="era-body">
+          <p class="dir">评论区互动 AI 策略产品</p>
+          <ul class="era-points">
+            <li><b>评论区互动 bot「AI 小快」</b><span>回答质量优化（有用性专项）· 主动发评 / 回复策略 · 生图能力 · Function Call 能力引入</span></li>
+          </ul>
+        </div>
         <span class="when">2023.11 — 2025.03</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
@@ -661,73 +841,27 @@
       <li>
         <span class="no">O-01</span>
         <h3><span class="mline">旅行</span></h3>
-        <p class="dir">澳大利亚 / 美国 / 法国 / 日本 / 韩国 / 印尼 / 泰国</p>
+        <p class="dir">每年国内外旅行累计 30 天以上</p>
         <span class="when">Travel</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
         <span class="no">O-02</span>
         <h3><span class="mline">音乐</span></h3>
-        <p class="dir">K-pop · 欧美流行 · 日摇 · 英伦摇滚</p>
+        <p class="dir">网易云音乐累计听歌 1.65 万首，曲风广泛</p>
         <span class="when">Music</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
         <span class="no">O-03</span>
         <h3><span class="mline">二次元</span></h3>
-        <p class="dir">追番 · Cosplay：奇犽 / 明日香 / 空军（第五人格）/ 富江 / 玛奇玛</p>
+        <p class="dir">追番 · Cosplay：奇犽 / 明日香 / 空军（第五人格）/ 富江 / 玛奇玛 / 哈尔</p>
         <span class="when">ACG</span>
-        <span class="rule" aria-hidden="true"></span>
-      </li>
-      <li>
-        <span class="no">O-04</span>
-        <h3><span class="mline">紫微斗数</span></h3>
-        <p class="dir">排盘与解读研究，做过 iztro × LLM 的小工具</p>
-        <span class="when">Side</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
     </ul>
   </section>
 
-  <!-- ================= traits ================= -->
-  <section id="traits" class="traits container">
-    <div class="sec-label">
-      <h2><span class="mline">个人特质<span class="en">What I Bring</span></span></h2>
-      <span class="count">Builder mindset</span>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
-    <div class="traits-intro">
-      <h3>Think clearly.<br />Ship fast.</h3>
-      <p>既能把 AI 能力拆成可落地的产品体验，也愿意亲手做出原型、上线验证，再用真实用户反馈继续迭代。</p>
-    </div>
-    <ul class="trait-list">
-      <li class="trait-item">
-        <span class="trait-no">T-01</span>
-        <h3>AI Builder</h3>
-        <p>从产品定义、Prompt 与交互到 Vibe Coding，能独立把想法做成可使用、可验证的产品。</p>
-      </li>
-      <li class="trait-item">
-        <span class="trait-no">T-02</span>
-        <h3>数据驱动</h3>
-        <p>用下载、访问、转化与用户行为验证判断，让数据参与每一轮产品取舍。</p>
-      </li>
-      <li class="trait-item">
-        <span class="trait-no">T-03</span>
-        <h3>行动力强</h3>
-        <p>快速拆解问题、推进协作并交付结果；面对模糊需求，先做出可讨论的版本。</p>
-      </li>
-      <li class="trait-item">
-        <span class="trait-no">T-04</span>
-        <h3>内容 Sense</h3>
-        <p>理解内容表达、情绪价值与传播语境，能把产品机制转化为用户愿意分享的体验。</p>
-      </li>
-      <li class="trait-item">
-        <span class="trait-no">T-05</span>
-        <h3>趋势与用户敏感度</h3>
-        <p>持续观察新技术、新内容趋势与用户需求变化，快速识别值得验证的机会。</p>
-      </li>
-    </ul>
-  </section>
 
 </main>
 
@@ -737,6 +871,69 @@
   <a class="roll" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3" target="_blank" rel="noopener"><span data-after="Rednote">小红书</span></a>
   <a class="roll" href="#top"><span data-after="Back to top">Back to top</span></a>
 </footer>
+
+<script>
+(function () {
+  /* ---------- work demo videos: play while visible, pause when scrolled away ---------- */
+  var videos = document.querySelectorAll('.work-preview video');
+  if (!videos.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+    videos.forEach(function (v) { v.controls = true; v.preload = 'metadata'; });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); }
+      else e.target.pause();
+    });
+  }, { threshold: 0.25 });
+  videos.forEach(function (v) { io.observe(v); });
+})();
+</script>
+
+<dialog class="lightbox" id="lightbox" aria-label="图片预览">
+  <img alt="" />
+  <p></p>
+  <button class="lb-close" type="button" aria-label="关闭">&times;</button>
+  <button class="lb-prev" type="button" aria-label="上一张">&larr;</button>
+  <button class="lb-next" type="button" aria-label="下一张">&rarr;</button>
+</dialog>
+
+<script>
+(function () {
+  /* ---------- gallery lightbox: open within the same gallery, ←/→ to browse ---------- */
+  var box = document.getElementById('lightbox');
+  if (!box || typeof box.showModal !== 'function') return;
+  var img = box.querySelector('img'), cap = box.querySelector('p');
+  var items = [], index = 0;
+  function show(i) {
+    index = (i + items.length) % items.length;
+    var a = items[index];
+    img.src = a.getAttribute('href');
+    img.alt = a.querySelector('img').alt;
+    var fc = a.parentNode.querySelector('figcaption');
+    cap.textContent = (fc ? fc.textContent : img.alt) + ' — ' + (index + 1) + ' / ' + items.length;
+  }
+  document.querySelectorAll('.gallery a, .proof-shots a').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      items = Array.prototype.slice.call(a.closest('.gallery, .proof-shots').querySelectorAll('a'));
+      show(items.indexOf(a));
+      box.showModal();
+      if (window.__lenis) window.__lenis.stop();
+    });
+  });
+  box.addEventListener('close', function () { if (window.__lenis) window.__lenis.start(); });
+  box.addEventListener('click', function (e) { if (e.target === box) box.close(); });
+  box.querySelector('.lb-close').addEventListener('click', function () { box.close(); });
+  box.querySelector('.lb-prev').addEventListener('click', function () { show(index - 1); });
+  box.querySelector('.lb-next').addEventListener('click', function () { show(index + 1); });
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+})();
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -763,6 +960,7 @@
   /* ---------- Lenis smooth scroll ---------- */
   if (typeof Lenis !== 'undefined') {
     var lenis = new Lenis({ lerp: 0.1 });
+    window.__lenis = lenis;
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
     gsap.ticker.lagSmoothing(0);
@@ -806,7 +1004,7 @@
   gsap.timeline({ delay: 0.15 })
     .to('#heroTitle .char', { y: '0%', duration: 1, stagger: 0.025, ease: 'power4.inOut' })
     .fromTo('header', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<')
-    .fromTo('.hero .meta-line', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<0.2')
+    .fromTo('.hero .hero-top > *', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<0.2')
     .fromTo('.hero .intro > *', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut', stagger: 0.12 }, '-=0.6');
 
   /* ---------- section headings (ref: lines y->0 stagger .1 dur .75; count random-ish fade at <0.25; replay on re-enter) ---------- */
@@ -822,16 +1020,24 @@
   });
 
   /* ---------- rows (ref: title line mask, then children opacity-only random stagger) ---------- */
-  gsap.utils.toArray('.row, .era-list li, .tool-card, .tool-overview, .trait-item, .traits-intro').forEach(function (row) {
+  gsap.utils.toArray('.row, .era-list > li, .tool-card, .tool-overview').forEach(function (row) {
     var tl = gsap.timeline({
       scrollTrigger: { trigger: row, start: 'top 85%' }
     });
     var line = row.querySelector('.mline');
     if (line) tl.fromTo(line, { y: '110%' }, { y: '0%', duration: 0.85, ease: 'power3.inOut' });
-    var fades = row.querySelectorAll('.no, .sub, .desc, .end, .dir, .when, .tool-top, .tool-data, .lab-note, .trait-no, .trait-item h3, .trait-item p, .traits-intro h3, .traits-intro p');
+    var fades = row.querySelectorAll('.no, .sub, .desc, .end, .work-extra, .dir, .when, .tool-top, .tool-data, .lab-note');
     if (fades.length) tl.fromTo(fades, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', stagger: { from: 'random', amount: 0.25 } }, '<0.25');
     var rule = row.querySelector('.rule');
     if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
+  });
+
+  /* ---------- NetEase cases: copy, then images, fade up ---------- */
+  gsap.utils.toArray('.career-case').forEach(function (c) {
+    gsap.fromTo(c.querySelectorAll('.case-top > *, .gallery figure'), { opacity: 0, y: 24 }, {
+      opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06,
+      scrollTrigger: { trigger: c, start: 'top 82%' }
+    });
   });
 
   /* ---------- marquee (ref: gsap x loop, hover decelerates to stop, leave resumes) ---------- */
