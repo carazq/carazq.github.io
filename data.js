@@ -25,8 +25,10 @@
 // ============================================================
 
 window.XHS_SNAPSHOT = {
-  date: "2026-10-13",
-  image: "assets/red-app-dashboard-2026-10-13.png"
+  date: "2026-11-27",
+  image: "assets/red-app-dashboard-2026-11-27.png",
+  width: 1840,
+  height: 1308
 };
 
 window.WORKS = [
@@ -69,8 +71,8 @@ window.WORKS = [
   {
     "title": "Let's 显化 · 向宇宙下单",
     "platform": "xiaohongshu",
-    "iconViewBox": "992 389 108 108",
-    "usage": 124000,
+    "iconViewBox": "991 982 108 108",
+    "usage": 129000,
     "en": "Universe Order",
     "qr": { "image": "assets/qr-universe-wechat.png", "label": "已上线微信小程序" },
     "desc": "把愿望转化为一张有仪式感的宇宙订单，围绕表达、分享与复访持续迭代。",
@@ -82,17 +84,37 @@ window.WORKS = [
       "images": ["assets/proof-universe-threads.jpg"]
     },
     "highlight": [
-      "12.4 万人使用"
+      "12.9 万人使用"
     ],
     "tags": [
       "V1.0.7"
     ]
   },
   {
+    "title": "OC DOLL · 亚文化 OC 捏捏",
+    "platform": "xiaohongshu",
+    "iconViewBox": "991 246 108 108",
+    "usage": 52000,
+    "en": "Pixel OC Dress-up",
+    "media": [{ "video": "assets/ocdoll-demo.mp4", "poster": "assets/ocdoll-demo-poster.jpg", "ratio": 0.459 }],
+    "proof": {
+      "text": "多位玩家反馈与 OC 的聊天超过 50 轮。"
+    },
+    "desc": "以二次元群体捏原创角色（OC）的需求为基础，做的亚文化风格像素换装小游戏；后续接入 AI 聊天，支持双角色对话。",
+    "role": "需求洞察 · 换装系统 · AI 角色聊天 · Vibe Coding",
+    "link": "https://xhslink.cn/o/6q3zikWX3uH",
+    "highlight": [
+      "5.2 万人使用"
+    ],
+    "tags": [
+      "V1.0.4"
+    ]
+  },
+  {
     "title": "表情包合拍",
     "platform": "xiaohongshu",
-    "iconViewBox": "38 64 108 108",
-    "usage": 45000,
+    "iconViewBox": "46 982 108 108",
+    "usage": 52000,
     "en": "Meme Photo Studio",
     "media": [
       { "video": "assets/meme-demo.mp4", "poster": "assets/meme-demo-poster.jpg", "ratio": 0.594 },
@@ -105,7 +127,7 @@ window.WORKS = [
     "role": "场景洞察 · 交互设计 · 前端实现 · 上线迭代",
     "link": "https://www.xiaohongshu.com/discovery/item/6a8c305200000000080139e4?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9WHFAJcopUSKTx8FcVx-asE=&xsec_source=pc_share",
     "highlight": [
-      "4.5 万人使用"
+      "5.2 万人使用"
     ],
     "tags": [
       "V1.0.2"
@@ -114,18 +136,18 @@ window.WORKS = [
   {
     "title": "Y2K 彩钻贴纸",
     "platform": "xiaohongshu",
-    "iconViewBox": "38 389 108 108",
-    "usage": 71000,
+    "iconViewBox": "46 246 108 108",
+    "usage": 81000,
     "en": "Y2K Gem Sticker Maker",
     "media": [{ "video": "assets/gem-demo.mp4", "poster": "assets/gem-demo-poster.jpg", "ratio": 1.92 }],
     "desc": "把照片转成千禧年彩钻贴纸风格，为头像、手帐与社交内容提供轻量化创作素材。",
     "role": "视觉概念 · 生成链路 · Vibe Coding · 发布上线",
     "link": "https://www.xiaohongshu.com/discovery/item/6a8c68f6000000002a02c5ec?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9cauadxqvBkHqIEv6mz6U7o=&xsec_source=pc_share",
     "highlight": [
-      "7.1 万人使用"
+      "8.1 万人使用"
     ],
     "tags": [
-      "V1.0.7"
+      "V1.0.8"
     ]
   },
   {
@@ -134,10 +156,10 @@ window.WORKS = [
     "media": [{ "video": "assets/upside-demo.mp4", "poster": "assets/upside-demo-poster.jpg", "ratio": 1.79 }],
     "desc": "怪奇物语主题黄金矿工小游戏，独立完成美术资产生成、数值策划、关卡设计等。",
     "platform": "xiaohongshu",
-    "iconViewBox": "38 714 108 108",
-    "usage": 13000,
+    "iconViewBox": "991 614 108 108",
+    "usage": 20000,
     "link": null,
-    "highlight": ["1.3 万人使用"],
+    "highlight": ["2 万人使用"],
     "tags": ["V1.0.0"]
   },
   {
@@ -146,10 +168,10 @@ window.WORKS = [
     "en": "Survivor Lineup Finder",
     "desc": "第五人格求生者阵容查询与配队工具。",
     "platform": "xiaohongshu",
-    "iconViewBox": "992 64 108 108",
-    "usage": 78,
+    "iconViewBox": "46 614 108 108",
+    "usage": 99,
     "link": null,
-    "highlight": ["78 人使用"],
+    "highlight": ["99 人使用"],
     "tags": ["V1.0.0"]
   }
 ];

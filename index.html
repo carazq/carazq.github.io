@@ -4,14 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>carazhang — AI 产品经理 · Portfolio</title>
-<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；小红书作品最高 12.4 万人使用，DivaTI 网站访问 35 万+。" />
+<meta name="description" content="carazhang 的个人作品集：AI 策略产品经理与 AI Builder，经历网易游戏、字节跳动与快手；小红书作品最高 12.9 万人使用，DivaTI 网站访问 35 万+。" />
 <meta property="og:title" content="carazhang — AI 产品经理" />
-<meta property="og:description" content="AI 策略产品工作与独立产品实践：小红书作品最高 12.4 万人使用，DivaTI 网站访问 35 万+。" />
+<meta property="og:description" content="AI 策略产品工作与独立产品实践：小红书作品最高 12.9 万人使用，DivaTI 网站访问 35 万+。" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://carazq.github.io/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="carazhang — AI 产品经理" />
-<meta name="twitter:description" content="游戏 AI、智能体与独立产品实验。小红书作品最高 12.4 万人使用。" />
+<meta name="twitter:description" content="游戏 AI、智能体与独立产品实验。小红书作品最高 12.9 万人使用。" />
 <meta name="twitter:image" content="https://carazq.github.io/og.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,6 +63,19 @@
     transition: transform 0.2s ease;
   }
   .skip-link:focus { transform: none; }
+
+  /* reading progress, scrubbed by GSAP */
+  .progress {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 101;
+    width: 100%;
+    height: 2px;
+    background: var(--ink);
+    transform: scaleX(0);
+    transform-origin: left;
+    pointer-events: none;
+  }
 
   main { width: 100%; max-width: 100%; overflow-x: hidden; }
 
@@ -369,6 +382,8 @@
   .era-points li { margin-top: 14px; }
   .era-points b { display: block; font-weight: 500; font-size: 15px; color: var(--ink); }
   .era-points span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.7; color: #6b6b65; }
+  .era-points .res { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .era-points .res::before { content: "数据成果 — "; color: var(--gray); }
   /* projects reuse the company row's columns: title under company, stats under the role line */
   .netease-featured .netease-projects {
     grid-column: 2 / -1;
@@ -413,6 +428,7 @@
   }
   .case-points { margin-top: 10px; padding: 0; list-style: none; counter-reset: pt; font-size: 14px; line-height: 1.9; color: #4a4a46; }
   .case-points li { counter-increment: pt; }
+  .case-points b { font-weight: 500; color: var(--ink); }
   .case-points li::before { content: counter(pt, decimal-leading-zero); font-family: var(--latin); font-size: 11px; letter-spacing: 0.1em; color: var(--gray); margin-right: 12px; }
   .case-stats {
     display: grid;
@@ -538,7 +554,11 @@
     object-fit: cover;
     overflow: hidden;
     background: #fff;
+    transition: rotate 0.5s var(--ease-out), scale 0.5s var(--ease-out);
   }
+  /* alternate tilt direction row by row */
+  .row.has-link:hover .work-icon { rotate: -6deg; scale: 1.06; }
+  .row.has-link:nth-of-type(even):hover .work-icon { rotate: 6deg; }
   .row .no { line-height: 56px; }
   .row .desc { padding-top: 6px; }
   .row .end { padding-top: 12px; }
@@ -562,6 +582,13 @@
   .work-extra > .proof:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
   .work-qr { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 8px; width: fit-content; }
   .work-media + .work-qr { margin-top: 18px; }
+  /* preview + user feedback: side by side on wide screens */
+  @media (min-width: 901px) {
+    .work-extra.split { display: flex; align-items: flex-start; gap: 40px; }
+    .work-extra.split > .work-media { flex: 1 1 0; }
+    .work-extra.split > .proof { flex: 0 1 400px; margin-top: 0; padding-top: 0; border-top: 0; }
+    .work-extra.split .proof-shots { flex-wrap: wrap; }
+  }
   /* no media: QR and feedback sit side by side */
   .work-extra:has(> .work-qr):not(:has(> .work-media)) { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px 56px; }
   .work-extra:has(> .work-qr):not(:has(> .work-media)) > .proof { margin-top: 0; padding-top: 0; border-top: 0; }
@@ -593,6 +620,7 @@
 <body>
 
 <a class="skip-link" href="#main-content">跳到主要内容</a>
+<div class="progress" aria-hidden="true"></div>
 
 <header>
   <a class="brand" href="#top">carazhang<sup>®</sup></a>
@@ -615,16 +643,16 @@
 
   <!-- ================= hero ================= -->
   <section class="hero container">
-    <div class="hero-top">
+    <div class="hero-top" data-drift="30">
       <p class="meta-line">carazhang — Portfolio, 2026</p>
       <p class="down">Scroll — 向下浏览</p>
     </div>
     <div class="hero-grid">
-      <h1 id="heroTitle">
+      <h1 id="heroTitle" data-drift="110">
         <span class="line">AI 策略产品经理</span>
         <span class="line"><span class="en">AI Product Manager</span></span>
       </h1>
-      <div class="intro">
+      <div class="intro" data-drift="50">
         <p>
           毕业于<b>中国传媒大学</b>，3 年 AI 策略产品经验，先后就职于<b>快手</b>、<b>字节跳动</b>、<b>网易游戏</b>，做过社区智能体、AI 搜索与游戏 AI。
           工作之外，独立完成产品从概念、开发到上线，并用真实数据迭代。
@@ -648,11 +676,11 @@
       <span class="rule" aria-hidden="true"></span>
     </div>
 
-    <p class="work-note">小红书作品需在最新版小红书 App 内体验；电脑浏览器查看笔记需先登录小红书。使用人数更新于 2026-10-13。</p>
+    <p class="work-note">小红书作品需在最新版小红书 App 内体验；电脑浏览器查看笔记需先登录小红书。使用人数更新于 2026-11-27。</p>
     <div id="workList"></div>
     <details class="work-source">
       <summary>查看使用数据来源 · 小红书创作后台截图</summary>
-      <img id="usageSource" width="1890" height="974" loading="lazy" alt="小红书创作后台：表情包合拍 4.5 万人、第五求生 78 人、Y2K 彩钻 7.1 万人、Let's 显化 12.4 万人、颠倒世界 1.3 万人使用" />
+      <img id="usageSource" width="1840" height="1308" loading="lazy" alt="小红书创作后台：Let's 显化 12.9 万人、Y2K 彩钻 8.1 万人、OC DOLL 5.2 万人、双人表情包 5.2 万人、颠倒世界 2 万人、第五求生配队 99 人使用" />
     </details>
     <script>
       (function () {
@@ -664,8 +692,8 @@
         document.getElementById('workList').innerHTML = list.map(function (w, i) {
           var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; }).join('');
           var icon = w.icon ? '<img class="work-icon" src="' + esc(w.icon) + '" width="56" height="56" alt="" />'
-            : w.iconViewBox ? '<svg class="work-icon" viewBox="' + esc(w.iconViewBox) + '" aria-hidden="true"><image href="' + esc(snapshot.image) + '" width="1890" height="974" /></svg>' : '';
-          var action = !w.link ? '已在小红书发布' : /xiaohongshu\.com/.test(w.link) ? '查看小红书笔记 ↗' : '访问网站 ↗';
+            : w.iconViewBox ? '<svg class="work-icon" viewBox="' + esc(w.iconViewBox) + '" aria-hidden="true"><image href="' + esc(snapshot.image) + '" width="' + (snapshot.width || 1890) + '" height="' + (snapshot.height || 974) + '" /></svg>' : '';
+          var action = !w.link ? '已在小红书发布' : /xiaohongshu\.com|xhslink\./.test(w.link) ? '查看小红书笔记 ↗' : '访问网站 ↗';
           var meta = (w.tags || []).concat(action).map(esc).join(' · ');
           var media = w.media || [];
           var total = media.reduce(function (sum, m) { return sum + (m.ratio || 1.6); }, 0);
@@ -691,7 +719,7 @@
             '<div class="work-title">' + icon + '<div><h3><span class="mline">' + esc(w.title) + '</span></h3>' + (w.en ? '<p class="sub">' + esc(w.en) + '</p>' : '') + '</div></div>' +
             '<div class="desc"><p>' + esc(w.desc) + '</p>' + (w.role ? '<span class="role">' + esc(w.role) + '</span>' : '') + '</div>' +
             '<div class="end">' + badges + '<span class="work-meta">' + meta + '</span></div>' +
-            (preview || qr || proof ? '<div class="work-extra">' + preview + qr + proof + '</div>' : '') +
+            (preview || qr || proof ? '<div class="work-extra' + (preview && proof && !qr ? ' split' : '') + '">' + preview + qr + proof + '</div>' : '') +
             '<span class="rule" aria-hidden="true"></span></article>';
         }).join('');
       })();
@@ -710,41 +738,19 @@
       <li class="netease-featured">
         <span class="no">C-01</span>
         <h3><span class="mline">网易游戏</span></h3>
-        <p class="dir">AI 策略产品 — 游戏 AI 助手、玩法策略与美术素材自动化</p>
+        <p class="dir">AI 策略产品 — 游戏内 AI 助手、AI 私域专项</p>
         <span class="when">2025.09 — Now</span>
         <div class="netease-projects" aria-label="网易游戏重点 AI 项目">
           <article class="career-case">
             <div class="case-top">
               <div>
-                <span class="case-no">01 · AI ASSISTANT</span>
-                <h4>游戏精灵 · AI 助手与陪伴</h4>
-                <p class="case-lead">网易游戏内置的 AI 助手，提供智能问答、攻略百科与实用工具。与各游戏运营协作，负责回答效果优化、AI 管线搭建及 memory 等其他能力探索。</p>
-              </div>
-              <div>
-                <dl class="case-stats">
-                  <div><dt>100+</dt><dd>款海内外游戏接入</dd></div>
-                  <div><dt>&gt;1000 万次</dt><dd>每月服务量</dd></div>
-                  <div><dt>&gt;80%</dt><dd>部分游戏渗透率</dd></div>
-                  <div><dt>&gt;90%</dt><dd>玩家满意度</dd></div>
-                </dl>
-                <p class="case-note">精灵业务整体数据，截至 2025 年 9 月。</p>
-              </div>
-            </div>
-            <div class="gallery">
-              <div class="g-row">
-                <figure style="--r:1.78"><a href="assets/pidan-ai.jpg"><img src="assets/pidan-ai.jpg" width="1236" height="694" loading="lazy" alt="蛋仔皮蛋 AI 问答界面，展示角色回复与追问推荐" /></a><figcaption>蛋仔派对 · 皮蛋</figcaption></figure>
-                <figure style="--r:1.62"><a href="assets/sprite-theme.jpg"><img src="assets/sprite-theme.jpg" width="1212" height="750" loading="lazy" alt="智能助手主题选择：两种角色皮肤" /></a><figcaption>逆水寒 · 小暖 / 血河小狗</figcaption></figure>
-                <figure style="--r:1.78"><a href="assets/sprite-qa.jpg"><img src="assets/sprite-qa.jpg" width="1600" height="898" loading="lazy" alt="精灵问答界面：进度查询回复与“大家都在问”推荐" /></a><figcaption>燕云十六声 · 燕叽</figcaption></figure>
-                <figure style="--r:1.78"><a href="assets/sprite-space.jpg"><img src="assets/sprite-space.jpg" width="1380" height="776" loading="lazy" alt="精灵空间：角色形象、亲密度等级与语音、提醒入口" /></a><figcaption>大话西游手游 · 精灵空间</figcaption></figure>
-              </div>
-            </div>
-          </article>
-          <article class="career-case">
-            <div class="case-top">
-              <div>
-                <span class="case-no">02 · STRATEGY</span>
-                <h4>AI 配将</h4>
-                <ol class="case-points"><li>个性化配将与攻略推荐</li><li>AI 阵容解读</li><li>PVE / PVP 全场景方案等</li></ol>
+                <span class="case-no">01 · IN-GAME AI ASSISTANT</span>
+                <h4>游戏内 AI 助手 · AI 配将</h4>
+                <p class="case-lead">负责游戏内 AI 助手的搭配类能力与新游接入，主要项目为率土之滨 AI 配将。</p>
+                <ol class="case-points">
+                  <li><b>队伍推荐</b>：基于对战数据给队伍评分，结合玩家已有的武将与战法推荐阵容。</li>
+                  <li><b>阵容解读</b>：针对"推荐有效但用户不信任"的问题，新增队伍简介、克制关系、实战技巧三个模块。</li>
+                </ol>
               </div>
               <div>
                 <dl class="case-stats">
@@ -765,18 +771,23 @@
           <article class="career-case">
             <div class="case-top">
               <div>
-                <span class="case-no">03 · PIPELINE</span>
-                <h4>AI 美术素材自动化管线</h4>
-                <p class="case-lead">运营填表即可生成活动推送素材：风格图与布局模板分开控制，一次生成整图，并适配多尺寸与多语言。</p>
+                <span class="case-no">02 · PRIVATE DOMAIN</span>
+                <h4>AI 私域专项</h4>
+                <p class="case-lead">面向私域回流投放，用 AI 完成圈人、文案与素材生产。</p>
+                <ol class="case-points">
+                  <li><b>AI 圈人</b>：结合游戏数据与私域数据做标签分组。</li>
+                  <li><b>AI 文案</b>：按人群分组生成私域投放文案。</li>
+                  <li><b>AI 素材管线</b>：运营填表即可生成活动投放素材；风格图与布局模板分开控制，一次生成整图，适配多尺寸与多语言。</li>
+                </ol>
               </div>
               <div>
                 <dl class="case-stats">
-                  <div><dt>5 min</dt><dd>出图，原流程 4–5 天</dd></div>
+                  <div><dt>5 min</dt><dd>素材出图，原流程 4–5 天</dd></div>
                   <div><dt>20+</dt><dd>款国内游戏接入</dd></div>
                   <div><dt>400+</dt><dd>张素材产出</dd></div>
-                  <div><dt>+236%</dt><dd>UV 唤起率（A/B）</dd></div>
+                  <div><dt>9</dt><dd>款海外游戏，生图带文本本地化</dd></div>
                 </dl>
-                <p class="case-note">截至 2026 年 3 月；唤起率 4.41% → 14.84% 为单次 A/B 实验结果。另为 9 款海外游戏搭建带文本本地化的生图模型。</p>
+                <p class="case-note">素材数据截至 2026 年 3 月。圈人与文案以回流渗透率、CTR、回流付费为核心指标。</p>
               </div>
             </div>
             <div class="gallery">
@@ -801,8 +812,15 @@
         <div class="era-body">
           <p class="dir">抖音 AI 策略产品 — AI 搜索</p>
           <ul class="era-points">
-            <li><b>搜索结果页 AI 问答卡质量优化</b><span>增加高亮 · 切换 GlobalSearch 模型 · 拓展出卡意图等</span></li>
-            <li><b>右下角悬浮球增长优化</b><span>悬浮球引导条 · 纯视频意图优化</span></li>
+            <li>
+              <b>抖音 AI 搜索固定入口悬浮球</b>
+              <span>针对悬浮球渗透率低的问题，在长尾 Query 无结果或复杂决策时机触发悬浮球引导条；引入 LLM 生成个性化追问引导文案；针对强视频意图推动回答富媒体化。</span>
+              <span class="res">AI 入口渗透率 0.24% → 0.32%；PV 280 万 → 366 万；大盘 AI 搜索人均活跃天数 +0.82%</span>
+            </li>
+            <li>
+              <b>AI 问答卡</b>
+              <span>精细化强意图 Query 识别，高确定性场景优先展示 AI 问答卡；持续优化回答质量与展示策略（增加高亮、切换 GlobalSearch 模型、拓展出卡意图等）。</span>
+            </li>
           </ul>
         </div>
         <span class="when">2025.03 — 2025.09</span>
@@ -814,7 +832,16 @@
         <div class="era-body">
           <p class="dir">评论区互动 AI 策略产品</p>
           <ul class="era-points">
-            <li><b>评论区互动 bot「AI 小快」</b><span>回答质量优化（有用性专项）· 主动发评 / 回复策略 · 生图能力 · Function Call 能力引入</span></li>
+            <li>
+              <b>评论区智能体「AI 小快」</b>
+              <span>0-1 参与搭建，负责交互分发策略与模型回复效果优化：@唤起冷启动与人设优化；针对寻求解答、情感分享意图设计主动回复；引入 Function Call 能力，优化知识类回答。</span>
+              <span class="res">日均唤起次数提升至 250 万+</span>
+            </li>
+            <li>
+              <b>评论区排序推荐策略</b>
+              <span>定义高潜评论，用爬坡强插与动态赛马打破马太效应；「好友 at」「神评」信号作为推荐核心特征。</span>
+              <span class="res">评论区停留时长 5 min → 7 min；大盘渗透率 +3%</span>
+            </li>
           </ul>
         </div>
         <span class="when">2023.11 — 2025.03</span>
@@ -1007,22 +1034,41 @@
     .fromTo('.hero .hero-top > *', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut' }, '<0.2')
     .fromTo('.hero .intro > *', { opacity: 0 }, { opacity: 1, duration: 0.75, ease: 'power3.inOut', stagger: 0.12 }, '-=0.6');
 
-  /* ---------- section headings (ref: lines y->0 stagger .1 dur .75; count random-ish fade at <0.25; replay on re-enter) ---------- */
+  /* ---------- reading progress (ref: byflashback, scaleX scrubbed by whole-page scroll) ---------- */
+  gsap.to('.progress', {
+    scaleX: 1, ease: 'none',
+    scrollTrigger: { trigger: document.body, start: 'top top', end: 'bottom bottom', scrub: true }
+  });
+
+  /* ---------- hero drift: layers leave at different speeds; amount set by data-drift (px) ---------- */
+  var narrow = window.matchMedia('(max-width: 900px)').matches;
+  document.querySelectorAll('[data-drift]').forEach(function (el) {
+    gsap.to(el, {
+      y: Number(el.dataset.drift) * (narrow ? 0.45 : 1), ease: 'none',
+      scrollTrigger: { trigger: el.closest('section'), start: 'top top', end: 'bottom top', scrub: 1.1 }
+    });
+  });
+
+  /* ---------- section headings (ref: lines y->0 stagger .1 dur .75; count fade at <0.25; reverses when scrolled back) ---------- */
   gsap.utils.toArray('.sec-label').forEach(function (sec) {
     var tl = gsap.timeline({
-      scrollTrigger: { trigger: sec, start: 'top 80%', toggleActions: 'play none none reset' }
+      scrollTrigger: { trigger: sec, start: 'top 80%', toggleActions: 'play none none reverse' }
     });
     tl.fromTo(sec.querySelectorAll('.mline'), { y: '110%' }, { y: '0%', duration: 0.75, stagger: 0.1, ease: 'power3.inOut' });
     var count = sec.querySelector('.count');
     if (count) tl.fromTo(count, { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut' }, '<0.25');
+    /* the heading rule follows the scroll instead of playing on its own */
     var rule = sec.querySelector('.rule');
-    if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
+    if (rule) gsap.fromTo(rule, { scaleX: 0 }, {
+      scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: sec, start: 'top 85%', end: 'top 40%', scrub: 0.6 }
+    });
   });
 
   /* ---------- rows (ref: title line mask, then children opacity-only random stagger) ---------- */
   gsap.utils.toArray('.row, .era-list > li, .tool-card, .tool-overview').forEach(function (row) {
     var tl = gsap.timeline({
-      scrollTrigger: { trigger: row, start: 'top 85%' }
+      scrollTrigger: { trigger: row, start: 'top 85%', toggleActions: 'play none none reverse' }
     });
     var line = row.querySelector('.mline');
     if (line) tl.fromTo(line, { y: '110%' }, { y: '0%', duration: 0.85, ease: 'power3.inOut' });
@@ -1032,13 +1078,59 @@
     if (rule) tl.fromTo(rule, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: 'power3.inOut' }, '<');
   });
 
-  /* ---------- NetEase cases: copy, then images, fade up ---------- */
+  /* ---------- NetEase cases: copy fades up, then screenshots settle from alternating tilts ---------- */
   gsap.utils.toArray('.career-case').forEach(function (c) {
-    gsap.fromTo(c.querySelectorAll('.case-top > *, .gallery figure'), { opacity: 0, y: 24 }, {
-      opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06,
-      scrollTrigger: { trigger: c, start: 'top 82%' }
+    var tl = gsap.timeline({
+      scrollTrigger: { trigger: c, start: 'top 82%', toggleActions: 'play none none reverse' }
     });
+    tl.fromTo(c.querySelectorAll('.case-top > *'), { opacity: 0, y: 24 }, {
+      opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06
+    });
+    tl.fromTo(c.querySelectorAll('.gallery figure'), {
+      opacity: 0,
+      y: function (i) { return 32 + i * 4; },
+      rotation: function (i) { return i % 2 ? 2 : -2; }
+    }, {
+      opacity: 1, y: 0, rotation: 0, duration: 0.9, ease: 'power3.out', stagger: 0.08
+    }, '<0.12');
   });
+
+  /* ---------- mobile screenshot rows: a shot goes soft as it slides out of view (ref: byflashback carousel) ---------- */
+  gsap.matchMedia().add('(max-width: 900px)', function () {
+    var rows = Array.prototype.slice.call(document.querySelectorAll('.g-row'));
+    function soften(row) {
+      var box = row.getBoundingClientRect();
+      row.querySelectorAll('figure').forEach(function (f) {
+        var r = f.getBoundingClientRect();
+        var shown = Math.max(0, Math.min(r.right, box.right) - Math.max(r.left, box.left));
+        var t = Math.max(0, Math.min(1, 1 - shown / r.width));
+        var blur = Math.round(t * t * 8 * 10) / 10;
+        if (f._blur !== blur) { f._blur = blur; f.style.filter = blur ? 'blur(' + blur + 'px)' : ''; }
+      });
+    }
+    var handlers = rows.map(function (row) {
+      var queued = false;
+      var onScroll = function () {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(function () { queued = false; soften(row); });
+      };
+      row.addEventListener('scroll', onScroll, { passive: true });
+      soften(row);
+      return onScroll;
+    });
+    return function () {
+      rows.forEach(function (row, i) {
+        row.removeEventListener('scroll', handlers[i]);
+        row.querySelectorAll('figure').forEach(function (f) { f.style.filter = ''; f._blur = 0; });
+      });
+    };
+  });
+
+  /* ---------- re-measure triggers once fonts and lazy images settle ---------- */
+  var refresh = function () { ScrollTrigger.refresh(); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  window.addEventListener('load', refresh, { once: true });
 
   /* ---------- marquee (ref: gsap x loop, hover decelerates to stop, leave resumes) ---------- */
   (function () {
