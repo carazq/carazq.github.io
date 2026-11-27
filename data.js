@@ -81,7 +81,8 @@ window.WORKS = [
       { "image": "assets/proof-meme-ranking.jpg", "ratio": 0.599 }
     ],
     "proof": {
-      "text": "登上小红书官方小工具必吃榜。"
+      "text": "登上小红书官方小工具必吃榜；在海口小红书举办的明日公园线下布展，现场可拍照打印。",
+      "images": ["assets/meme-park-board.jpg", "assets/meme-park-booth.jpg", "assets/meme-park-crowd.jpg"]
     },
     "desc": "一个人或两个人拍照，即可生成有梗的表情包合拍图，缩短从拍摄、生成到分享的完整链路。",
     "role": "场景洞察 · 交互设计 · 前端实现 · 上线迭代",
