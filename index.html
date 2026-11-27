@@ -152,15 +152,15 @@
 
   /* ================= hero ================= */
   .hero {
-    padding-top: 22vh;
-    padding-bottom: 8vh;
+    padding-top: 16vh;
+    padding-bottom: 5vh;
   }
   .hero-top {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     gap: 20px;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
   }
   .hero .meta-line,
   .hero .down {
@@ -224,7 +224,7 @@
   }
 
   /* ================= sections ================= */
-  section { padding-top: 11vh; padding-bottom: 4vh; }
+  section { padding-top: 7vh; padding-bottom: 2vh; }
 
   .sec-label {
     display: flex;
@@ -268,7 +268,7 @@
     grid-template-columns: 64px minmax(0, 1.15fr) minmax(0, 1fr) auto;
     gap: 3vw;
     align-items: start;
-    padding: 44px 0;
+    padding: 30px 0;
     text-decoration: none;
     position: relative;
     transition: background 0.5s var(--ease-out), padding-left 0.5s var(--ease-out), padding-right 0.5s var(--ease-out);
@@ -343,7 +343,7 @@
     grid-template-columns: 64px minmax(0, 0.7fr) minmax(0, 1.7fr) 150px;
     gap: 3vw;
     align-items: baseline;
-    padding: 34px 0;
+    padding: 24px 0;
     position: relative;
   }
   .era-list .rule {
@@ -378,7 +378,7 @@
     white-space: nowrap;
     justify-self: end;
   }
-  .era-list > li.netease-featured { row-gap: 0; padding-top: 44px; padding-bottom: 48px; }
+  .era-list > li.netease-featured { row-gap: 0; padding-top: 32px; padding-bottom: 36px; }
   .era-points { list-style: none; margin-top: 4px; }
   .era-points li { margin-top: 14px; }
   .era-points b { display: block; font-weight: 500; font-size: 15px; color: var(--ink); }
@@ -388,7 +388,7 @@
   /* projects reuse the company row's columns: title under company, stats under the role line */
   .netease-featured .netease-projects {
     grid-column: 2 / -1;
-    margin-top: 40px;
+    margin-top: 24px;
     display: grid;
     grid-template-columns: subgrid;
   }
@@ -398,7 +398,7 @@
   .netease-projects .case-top > div:last-child { grid-column: 2 / -1; }
   .netease-projects .gallery { grid-column: 1 / -1; }
   .career-case {
-    padding: 36px 0 44px;
+    padding: 26px 0 30px;
     border-top: 1px solid var(--hairline);
   }
   .career-case:last-child { padding-bottom: 0; }
@@ -451,7 +451,8 @@
   .case-note { margin-top: 16px; font-size: 11.5px; line-height: 1.7; color: var(--gray); }
 
   /* gallery rows: flex-grow follows each image's aspect ratio, so every image in a row shares one height */
-  .gallery { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+  .gallery { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+  .career-case:first-child .g-row { max-width: 880px; }
   .g-row { display: flex; gap: 12px; }
   .g-row figure { flex: var(--r) 1 0; min-width: 0; }
   .gallery a { display: block; overflow: hidden; border-radius: 8px; background: var(--hover-bg); cursor: zoom-in; }
@@ -565,7 +566,7 @@
   .row .end { padding-top: 12px; }
   .work-meta { font-family: var(--latin); font-size: 12px; letter-spacing: 0.04em; color: var(--gray); }
   .row.has-link:hover .work-meta { color: var(--ink); }
-  .row { row-gap: 26px; }
+  .row { row-gap: 18px; }
   .work-extra { grid-column: 2 / -1; min-width: 0; }
   .work-media { display: flex; gap: 10px; }
   .work-preview {
@@ -736,10 +737,6 @@
               <div class="g-row">
                 <figure style="--r:1.52"><a href="assets/art-kv-input.jpg"><img src="assets/art-kv-input.jpg" width="570" height="375" loading="lazy" alt="输入的 KV 风格图：角色与场景" /></a><figcaption>输入 · KV 风格图</figcaption></figure>
                 <figure style="--r:1.79"><a href="assets/art-newyear.jpg"><img src="assets/art-newyear.jpg" width="1376" height="768" loading="lazy" alt="生成的元旦活动推送素材，含标题、视频框与按钮" /></a><figcaption>输出 · 整图生成</figcaption></figure>
-                <figure style="--r:1.79"><a href="assets/art-circus.jpg"><img src="assets/art-circus.jpg" width="1600" height="893" loading="lazy" alt="生成的赛季开幕活动素材" /></a><figcaption>赛季活动</figcaption></figure>
-              </div>
-              <div class="g-row">
-                <figure style="--r:2.55"><a href="assets/art-festival.jpg"><img src="assets/art-festival.jpg" width="1600" height="627" loading="lazy" alt="生成的新春版本福利前瞻横幅" /></a><figcaption>版本福利</figcaption></figure>
                 <figure style="--r:2.40"><a href="assets/art-jp.jpg"><img src="assets/art-jp.jpg" width="1412" height="589" loading="lazy" alt="海外日语版推送素材" /></a><figcaption>海外 · 日语</figcaption></figure>
                 <figure style="--r:2.36"><a href="assets/art-en.jpg"><img src="assets/art-en.jpg" width="1414" height="600" loading="lazy" alt="海外英语版推送素材" /></a><figcaption>海外 · 英语</figcaption></figure>
               </div>
@@ -756,12 +753,12 @@
           <ul class="era-points">
             <li>
               <b>抖音 AI 搜索固定入口悬浮球</b>
-              <span>针对悬浮球渗透率低的问题，在长尾 Query 无结果或复杂决策时机触发悬浮球引导条；引入 LLM 生成个性化追问引导文案；针对强视频意图推动回答富媒体化。</span>
+              <span>长尾 Query 无结果或复杂决策时触发引导条；LLM 生成个性化追问文案；强视频意图回答富媒体化。</span>
               <span class="res">AI 入口渗透率 0.24% → 0.32%；PV 280 万 → 366 万；大盘 AI 搜索人均活跃天数 +0.82%</span>
             </li>
             <li>
               <b>AI 问答卡</b>
-              <span>精细化强意图 Query 识别，高确定性场景优先展示 AI 问答卡；持续优化回答质量与展示策略（增加高亮、切换 GlobalSearch 模型、拓展出卡意图等）。</span>
+              <span>强意图 Query 识别，高确定性场景优先出卡；优化回答质量与展示（高亮、切换 GlobalSearch 模型、拓展出卡意图）。</span>
             </li>
           </ul>
         </div>
@@ -776,12 +773,12 @@
           <ul class="era-points">
             <li>
               <b>评论区智能体「AI 小快」</b>
-              <span>0-1 参与搭建，负责交互分发策略与模型回复效果优化：@唤起冷启动与人设优化；针对寻求解答、情感分享意图设计主动回复；引入 Function Call 能力，优化知识类回答。</span>
+              <span>0-1 参与搭建，负责分发策略与回复效果：@唤起冷启动与人设优化、意图驱动的主动回复、引入 Function Call 优化知识类回答。</span>
               <span class="res">日均唤起次数提升至 250 万+</span>
             </li>
             <li>
               <b>评论区排序推荐策略</b>
-              <span>定义高潜评论，用爬坡强插与动态赛马打破马太效应；「好友 at」「神评」信号作为推荐核心特征。</span>
+              <span>定义高潜评论，爬坡强插与动态赛马打破马太效应；「好友 at」「神评」作为核心推荐特征。</span>
               <span class="res">评论区停留时长 5 min → 7 min；大盘渗透率 +3%</span>
             </li>
           </ul>
@@ -793,7 +790,7 @@
         <span class="no">C-04</span>
         <h3><span class="mline">中国传媒大学</span></h3>
         <p class="dir">新闻学本科 · 辅修计算传播</p>
-        <span class="when">Origin</span>
+        <span class="when">2020 — 2024</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
     </ul>
@@ -828,7 +825,7 @@
           var meta = (w.tags || []).concat(action).map(esc).join(' · ');
           var media = w.media || [];
           var total = media.reduce(function (sum, m) { return sum + (m.ratio || 1.6); }, 0);
-          var preview = media.length ? '<div class="work-media" style="max-width:min(100%,' + Math.round(total * 320) + 'px)">' + media.map(function (m) {
+          var preview = media.length ? '<div class="work-media" style="max-width:min(100%,' + Math.round(total * 210) + 'px)">' + media.map(function (m) {
             var r = m.ratio || 1.6;
             var inner = m.video
               ? '<video src="' + esc(m.video) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : '') + ' muted loop playsinline preload="none" aria-label="' + esc(w.title) + ' 演示视频"></video>'
