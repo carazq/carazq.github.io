@@ -172,13 +172,13 @@
   }
   .hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr) clamp(120px, 12vw, 176px);
     gap: 4vw;
     align-items: end;
   }
   .hero h1 {
     font-weight: 700;
-    font-size: clamp(2.5rem, 6.4vw, 5.8rem);
+    font-size: clamp(2.4rem, 5vw, 5rem);
     line-height: 1.18;
     letter-spacing: 0.01em;
     max-width: 100%;
@@ -200,6 +200,8 @@
     max-width: 30em;
   }
   .hero .intro p b { font-weight: 500; color: var(--ink); }
+  .hero-photo { margin: 0; aspect-ratio: 3 / 4; border-radius: 8px; overflow: hidden; background: var(--hover-bg); }
+  .hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
   /* ================= marquee ================= */
   .marquee {
@@ -452,7 +454,6 @@
 
   /* gallery rows: flex-grow follows each image's aspect ratio, so every image in a row shares one height */
   .gallery { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
-  .career-case:first-child .g-row { max-width: 880px; }
   .g-row { display: flex; gap: 12px; }
   .g-row figure { flex: var(--r) 1 0; min-width: 0; }
   .gallery a { display: block; overflow: hidden; border-radius: 8px; background: var(--hover-bg); cursor: zoom-in; }
@@ -516,6 +517,7 @@
     nav { display: none; }
     .hero { padding-top: 20vh; padding-bottom: 7vh; }
     .hero-grid { grid-template-columns: 1fr; gap: 4vh; }
+    .hero-photo { order: -1; width: 112px; }
     .hero .down { display: none; }
     .row, .era-list > li { grid-template-columns: 40px 1fr; grid-template-rows: auto auto; gap: 8px 16px; padding: 30px 0; }
     .row .desc, .era-list .dir, .era-body { grid-column: 2; }
@@ -660,6 +662,7 @@
           工作之外，独立完成产品从概念、开发到上线，并用真实数据迭代。
         </p>
       </div>
+      <figure class="hero-photo" data-drift="40"><img src="assets/photo.jpg" width="480" height="640" alt="carazhang 本人照片" /></figure>
     </div>
   </section>
 
@@ -674,10 +677,17 @@
   <section id="experience" class="container">
     <div class="sec-label">
       <h2><span class="mline">经历<span class="en">Career</span></span></h2>
-      <span class="count">2023 — Now</span>
+      <span class="count">2020 — Now</span>
       <span class="rule" aria-hidden="true"></span>
     </div>
     <ul class="era-list">
+      <li>
+        <span class="no">EDU</span>
+        <h3><span class="mline">中国传媒大学</span></h3>
+        <p class="dir">新闻学本科 · 辅修计算传播</p>
+        <span class="when">2020 — 2024</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
       <li class="netease-featured">
         <span class="no">C-01</span>
         <h3><span class="mline">网易游戏</span></h3>
@@ -687,27 +697,27 @@
           <article class="career-case">
             <div class="case-top">
               <div>
-                <span class="case-no">01 · IN-GAME AI ASSISTANT</span>
-                <h4>游戏内 AI 助手 · AI 配将</h4>
-                <p class="case-lead">负责游戏内 AI 助手的搭配类能力与新游接入，主要项目为率土之滨 AI 配将。</p>
-                <ol class="case-points">
-                  <li><b>队伍推荐</b>：基于对战数据给队伍评分，结合玩家已有的武将与战法推荐阵容。</li>
-                  <li><b>阵容解读</b>：针对"推荐有效但用户不信任"的问题，新增队伍简介、克制关系、实战技巧三个模块。</li>
-                </ol>
+                <span class="case-no">01 · AI COMPANION</span>
+                <h4>游戏内 AI 助手（陪伴类）</h4>
+                <p class="case-lead">网易游戏内置的 AI 助手，以游戏角色形象陪伴玩家，提供智能问答、攻略与实用工具。与各游戏运营协作，负责回答效果优化、AI 管线搭建及 memory 等能力探索；AI 配将是其中的搭配类能力，上线后游戏内单日访问渗透从 0.7% 提升到 2.0%。</p>
               </div>
               <div>
                 <dl class="case-stats">
-                  <div><dt>0.7% → 2.0%</dt><dd>游戏内单日访问渗透</dd></div>
-                  <div><dt>6.9% → 12.4%</dt><dd>App 内工具单日访问渗透</dd></div>
+                  <div><dt>100+</dt><dd>款海内外游戏接入</dd></div>
+                  <div><dt>&gt;1000 万次</dt><dd>每月服务量</dd></div>
+                  <div><dt>&gt;80%</dt><dd>部分游戏渗透率</dd></div>
+                  <div><dt>&gt;90%</dt><dd>玩家满意度</dd></div>
                 </dl>
-                <p class="case-note">2026 年 3 月线上数据，两项分属不同访问场景。</p>
+                <p class="case-note">AI 助手业务整体数据，截至 2025 年 9 月；配将为 2026 年 3 月线上数据。</p>
               </div>
             </div>
             <div class="gallery">
               <div class="g-row">
-                <figure style="--r:2.17"><a href="assets/lineup-slg.jpg"><img src="assets/lineup-slg.jpg" width="1600" height="739" loading="lazy" alt="AI 配将：大营、中军、前锋武将与推荐战法组合" /></a><figcaption>率土之滨 · 阵容与战法推荐</figcaption></figure>
-                <figure style="--r:0.59"><a href="assets/ai-lineup.jpeg"><img src="assets/ai-lineup.jpeg" width="471" height="803" loading="lazy" alt="AI 配将截图，展示队伍克制总结、阵容推荐和评价入口" /></a><figcaption>率土之滨 · 队伍克制解读</figcaption></figure>
-                <figure style="--r:1.82"><a href="assets/lineup-guide.jpg"><img src="assets/lineup-guide.jpg" width="1589" height="875" loading="lazy" alt="智能助手角色攻略卡：技能、御魂搭配与斗技阵容一键配置" /></a><figcaption>阴阳师 · 式神攻略与阵容配置</figcaption></figure>
+                <figure style="--r:1.78"><a href="assets/pidan-ai.jpg"><img src="assets/pidan-ai.jpg" width="1236" height="694" loading="lazy" alt="蛋仔皮蛋 AI 问答界面，展示角色回复与追问推荐" /></a><figcaption>蛋仔派对 · 皮蛋</figcaption></figure>
+                <figure style="--r:1.62"><a href="assets/sprite-theme.jpg"><img src="assets/sprite-theme.jpg" width="1212" height="750" loading="lazy" alt="智能助手主题选择：两种角色皮肤" /></a><figcaption>逆水寒 · 小暖 / 血河小狗</figcaption></figure>
+                <figure style="--r:1.78"><a href="assets/sprite-qa.jpg"><img src="assets/sprite-qa.jpg" width="1600" height="898" loading="lazy" alt="AI 助手问答界面：进度查询回复与“大家都在问”推荐" /></a><figcaption>燕云十六声 · 燕叽</figcaption></figure>
+                <figure style="--r:1.78"><a href="assets/sprite-space.jpg"><img src="assets/sprite-space.jpg" width="1380" height="776" loading="lazy" alt="AI 助手空间：角色形象、亲密度等级与语音、提醒入口" /></a><figcaption>大话西游手游 · 亲密度与语音</figcaption></figure>
+                <figure style="--r:2.17"><a href="assets/lineup-slg.jpg"><img src="assets/lineup-slg.jpg" width="1600" height="739" loading="lazy" alt="AI 配将：大营、中军、前锋武将与推荐战法组合" /></a><figcaption>率土之滨 · AI 配将</figcaption></figure>
               </div>
             </div>
           </article>
@@ -716,12 +726,7 @@
               <div>
                 <span class="case-no">02 · PRIVATE DOMAIN</span>
                 <h4>AI 私域专项</h4>
-                <p class="case-lead">面向私域回流投放，用 AI 完成圈人、文案与素材生产。</p>
-                <ol class="case-points">
-                  <li><b>AI 圈人</b>：结合游戏数据与私域数据做标签分组。</li>
-                  <li><b>AI 文案</b>：按人群分组生成私域投放文案。</li>
-                  <li><b>AI 素材管线</b>：运营填表即可生成活动投放素材；风格图与布局模板分开控制，一次生成整图，适配多尺寸与多语言。</li>
-                </ol>
+                <p class="case-lead">面向私域回流投放：AI 结合游戏数据与私域数据做标签分组圈人，再按人群生成投放文案与美术素材。素材由运营填表驱动，风格图与布局模板分开控制、一次生成整图，适配多尺寸与多语言；以回流渗透率、CTR、回流付费为核心指标。</p>
               </div>
               <div>
                 <dl class="case-stats">
@@ -730,7 +735,7 @@
                   <div><dt>400+</dt><dd>张素材产出</dd></div>
                   <div><dt>9</dt><dd>款海外游戏，生图带文本本地化</dd></div>
                 </dl>
-                <p class="case-note">素材数据截至 2026 年 3 月。圈人与文案以回流渗透率、CTR、回流付费为核心指标。</p>
+                <p class="case-note">素材数据截至 2026 年 3 月。</p>
               </div>
             </div>
             <div class="gallery">
@@ -784,13 +789,6 @@
           </ul>
         </div>
         <span class="when">2023.11 — 2025.03</span>
-        <span class="rule" aria-hidden="true"></span>
-      </li>
-      <li>
-        <span class="no">C-04</span>
-        <h3><span class="mline">中国传媒大学</span></h3>
-        <p class="dir">新闻学本科 · 辅修计算传播</p>
-        <span class="when">2020 — 2024</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
     </ul>
