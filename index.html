@@ -376,6 +376,10 @@
   .era-points b { display: block; font-weight: 500; font-size: 15px; color: var(--ink); }
   .era-points span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.7; color: #6b6b65; }
   .era-points .res { color: var(--ink); font-variant-numeric: tabular-nums; }
+  .era-shots { margin-top: 8px; }
+  .era-shots summary { cursor: pointer; width: fit-content; font-size: 12px; color: var(--gray); }
+  .era-shots summary:hover { color: var(--ink); }
+  .era-shots .gallery { margin-top: 12px; }
   .era-points .res::before { content: "数据成果 — "; color: var(--gray); }
   /* projects reuse the company row's columns: title under company, stats under the role line */
   .netease-featured .netease-projects {
@@ -670,66 +674,48 @@
         <span class="when">2020 — 2024</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
-      <li class="netease-featured">
+      <li>
         <span class="no">C-01</span>
         <h3><span class="mline">网易游戏</span></h3>
-        <p class="dir">AI 策略产品 — 游戏内 AI 助手、AI 私域专项</p>
-        <span class="when">2025.09 — Now</span>
-        <div class="netease-projects" aria-label="网易游戏重点 AI 项目">
-          <article class="career-case">
-            <div class="case-top">
-              <div>
-                <span class="case-no">01 · AI COMPANION</span>
-                <h4>游戏内 AI 助手（陪伴类）</h4>
-                <p class="case-lead">网易游戏内置的 AI 助手，以游戏角色形象陪伴玩家，提供智能问答、攻略与实用工具。与各游戏运营协作，负责回答效果优化、AI 管线搭建及 memory 等能力探索；AI 配将是其中的搭配类能力，上线后游戏内单日访问渗透从 0.7% 提升到 2.0%。</p>
-              </div>
-              <div>
-                <dl class="case-stats">
-                  <div><dt>100+</dt><dd>款海内外游戏接入</dd></div>
-                  <div><dt>&gt;1000 万次</dt><dd>每月服务量</dd></div>
-                  <div><dt>&gt;80%</dt><dd>部分游戏渗透率</dd></div>
-                  <div><dt>&gt;90%</dt><dd>玩家满意度</dd></div>
-                </dl>
-                <p class="case-note">AI 助手业务整体数据，截至 2025 年 9 月；配将为 2026 年 3 月线上数据。</p>
-              </div>
-            </div>
-            <div class="gallery">
-              <div class="g-row">
-                <figure style="--r:1.78"><a href="assets/pidan-ai.jpg"><img src="assets/pidan-ai.jpg" width="1236" height="694" loading="lazy" alt="蛋仔皮蛋 AI 问答界面，展示角色回复与追问推荐" /></a><figcaption>蛋仔派对 · 皮蛋</figcaption></figure>
-                <figure style="--r:1.62"><a href="assets/sprite-theme.jpg"><img src="assets/sprite-theme.jpg" width="1212" height="750" loading="lazy" alt="智能助手主题选择：两种角色皮肤" /></a><figcaption>逆水寒 · 小暖 / 血河小狗</figcaption></figure>
-                <figure style="--r:1.78"><a href="assets/sprite-qa.jpg"><img src="assets/sprite-qa.jpg" width="1600" height="898" loading="lazy" alt="AI 助手问答界面：进度查询回复与“大家都在问”推荐" /></a><figcaption>燕云十六声 · 燕叽</figcaption></figure>
-                <figure style="--r:1.78"><a href="assets/sprite-space.jpg"><img src="assets/sprite-space.jpg" width="1380" height="776" loading="lazy" alt="AI 助手空间：角色形象、亲密度等级与语音、提醒入口" /></a><figcaption>大话西游手游 · 亲密度与语音</figcaption></figure>
-                <figure style="--r:2.17"><a href="assets/lineup-slg.jpg"><img src="assets/lineup-slg.jpg" width="1600" height="739" loading="lazy" alt="AI 配将：大营、中军、前锋武将与推荐战法组合" /></a><figcaption>率土之滨 · AI 配将</figcaption></figure>
-              </div>
-            </div>
-          </article>
-          <article class="career-case">
-            <div class="case-top">
-              <div>
-                <span class="case-no">02 · PRIVATE DOMAIN</span>
-                <h4>AI 私域专项</h4>
-                <p class="case-lead">面向私域回流投放：AI 结合游戏数据与私域数据做标签分组圈人，再按人群生成投放文案与美术素材。素材由运营填表驱动，风格图与布局模板分开控制、一次生成整图，适配多尺寸与多语言；以回流渗透率、CTR、回流付费为核心指标。</p>
-              </div>
-              <div>
-                <dl class="case-stats">
-                  <div><dt>5 min</dt><dd>素材出图，原流程 4–5 天</dd></div>
-                  <div><dt>20+</dt><dd>款国内游戏接入</dd></div>
-                  <div><dt>400+</dt><dd>张素材产出</dd></div>
-                  <div><dt>9</dt><dd>款海外游戏，生图带文本本地化</dd></div>
-                </dl>
-                <p class="case-note">素材数据截至 2026 年 3 月。</p>
-              </div>
-            </div>
-            <div class="gallery">
-              <div class="g-row">
-                <figure style="--r:1.52"><a href="assets/art-kv-input.jpg"><img src="assets/art-kv-input.jpg" width="570" height="375" loading="lazy" alt="输入的 KV 风格图：角色与场景" /></a><figcaption>输入 · KV 风格图</figcaption></figure>
-                <figure style="--r:1.79"><a href="assets/art-newyear.jpg"><img src="assets/art-newyear.jpg" width="1376" height="768" loading="lazy" alt="生成的元旦活动推送素材，含标题、视频框与按钮" /></a><figcaption>输出 · 整图生成</figcaption></figure>
-                <figure style="--r:2.40"><a href="assets/art-jp.jpg"><img src="assets/art-jp.jpg" width="1412" height="589" loading="lazy" alt="海外日语版推送素材" /></a><figcaption>海外 · 日语</figcaption></figure>
-                <figure style="--r:2.36"><a href="assets/art-en.jpg"><img src="assets/art-en.jpg" width="1414" height="600" loading="lazy" alt="海外英语版推送素材" /></a><figcaption>海外 · 英语</figcaption></figure>
-              </div>
-            </div>
-          </article>
+        <div class="era-body">
+          <p class="dir">AI 策略产品 — 游戏内 AI 助手、AI 私域专项</p>
+          <ul class="era-points">
+            <li>
+              <b>游戏内 AI 助手（陪伴类）</b>
+              <span>网易游戏内置的 AI 助手，覆盖 100+ 款海内外游戏、每月服务超 1000 万次，以游戏角色形象陪伴玩家，提供智能问答、攻略与实用工具。与各游戏运营协作，负责回答效果优化、AI 管线搭建及 memory 等能力探索；AI 配将是其中的搭配类能力。</span>
+              <span class="res">AI 配将上线后游戏内单日访问渗透 0.7% → 2.0%</span>
+              <details class="era-shots">
+                <summary>查看截图 · 5 张</summary>
+                <div class="gallery">
+                  <div class="g-row">
+                    <figure style="--r:1.78"><a href="assets/pidan-ai.jpg"><img src="assets/pidan-ai.jpg" width="1236" height="694" loading="lazy" alt="蛋仔皮蛋 AI 问答界面，展示角色回复与追问推荐" /></a><figcaption>蛋仔派对 · 皮蛋</figcaption></figure>
+                    <figure style="--r:1.62"><a href="assets/sprite-theme.jpg"><img src="assets/sprite-theme.jpg" width="1212" height="750" loading="lazy" alt="智能助手主题选择：两种角色皮肤" /></a><figcaption>逆水寒 · 小暖 / 血河小狗</figcaption></figure>
+                    <figure style="--r:1.78"><a href="assets/sprite-qa.jpg"><img src="assets/sprite-qa.jpg" width="1600" height="898" loading="lazy" alt="AI 助手问答界面：进度查询回复与“大家都在问”推荐" /></a><figcaption>燕云十六声 · 燕叽</figcaption></figure>
+                    <figure style="--r:1.78"><a href="assets/sprite-space.jpg"><img src="assets/sprite-space.jpg" width="1380" height="776" loading="lazy" alt="AI 助手空间：角色形象、亲密度等级与语音、提醒入口" /></a><figcaption>大话西游手游 · 亲密度与语音</figcaption></figure>
+                    <figure style="--r:2.17"><a href="assets/lineup-slg.jpg"><img src="assets/lineup-slg.jpg" width="1600" height="739" loading="lazy" alt="AI 配将：大营、中军、前锋武将与推荐战法组合" /></a><figcaption>率土之滨 · AI 配将</figcaption></figure>
+                  </div>
+                </div>
+              </details>
+            </li>
+            <li>
+              <b>AI 私域专项</b>
+              <span>面向私域回流投放：AI 结合游戏数据与私域数据做标签分组圈人，再按人群生成投放文案与美术素材；素材由运营填表驱动，风格图与布局模板分开控制、一次生成整图，适配多尺寸与多语言。</span>
+              <span class="res">私域回流渗透率 45% → 48%；素材出图从 4–5 天缩短到 5 分钟，覆盖 20+ 款国内游戏、产出 400+ 张素材，另有 9 款海外游戏接入</span>
+              <details class="era-shots">
+                <summary>查看截图 · 4 张</summary>
+                <div class="gallery">
+                  <div class="g-row">
+                    <figure style="--r:1.52"><a href="assets/art-kv-input.jpg"><img src="assets/art-kv-input.jpg" width="570" height="375" loading="lazy" alt="输入的 KV 风格图：角色与场景" /></a><figcaption>输入 · KV 风格图</figcaption></figure>
+                    <figure style="--r:1.79"><a href="assets/art-newyear.jpg"><img src="assets/art-newyear.jpg" width="1376" height="768" loading="lazy" alt="生成的元旦活动推送素材，含标题、视频框与按钮" /></a><figcaption>输出 · 整图生成</figcaption></figure>
+                    <figure style="--r:2.40"><a href="assets/art-jp.jpg"><img src="assets/art-jp.jpg" width="1412" height="589" loading="lazy" alt="海外日语版推送素材" /></a><figcaption>海外 · 日语</figcaption></figure>
+                    <figure style="--r:2.36"><a href="assets/art-en.jpg"><img src="assets/art-en.jpg" width="1414" height="600" loading="lazy" alt="海外英语版推送素材" /></a><figcaption>海外 · 英语</figcaption></figure>
+                  </div>
+                </div>
+              </details>
+            </li>
+          </ul>
         </div>
+        <span class="when">2025.09 — Now</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
