@@ -21,7 +21,7 @@
 //   proof     用户口碑：text 一句话，links 外部链接，images 截图
 //
 // 注意：文字两边的英文引号 "" 和每行末尾的逗号不要删。
-// 作品顺序 = 网站上的顺序，编号会自动生成。
+// 作品顺序 = 网站上的顺序（按上线时间倒序，新的在上），编号会自动生成。
 // ============================================================
 
 window.XHS_SNAPSHOT = {
@@ -32,6 +32,89 @@ window.XHS_SNAPSHOT = {
 };
 
 window.WORKS = [
+  {
+    "title": "OC DOLL · 亚文化 OC 捏捏",
+    "platform": "xiaohongshu",
+    "iconViewBox": "991 246 108 108",
+    "usage": 52000,
+    "en": "Pixel OC Dress-up",
+    "media": [{ "video": "assets/ocdoll-demo.mp4", "poster": "assets/ocdoll-demo-poster.jpg", "ratio": 0.459 }],
+    "proof": {
+      "text": "多位玩家反馈与 OC 的聊天超过 50 轮。截图为玩家分享的 AI 聊天、双人小剧场与 OC 档案卡。",
+      "images": ["assets/ocdoll-ugc-chat.jpg", "assets/ocdoll-ugc-theater.jpg", "assets/ocdoll-ugc-files.jpg"]
+    },
+    "desc": "以二次元群体捏原创角色（OC）的需求为基础，做的亚文化风格像素换装小游戏；后续接入 AI 聊天，支持双角色对话。",
+    "role": "需求洞察 · 换装系统 · AI 角色聊天 · Vibe Coding",
+    "link": "https://xhslink.cn/o/6q3zikWX3uH",
+    "highlight": [
+      "5.2 万人使用"
+    ],
+    "tags": [
+      "V1.0.4"
+    ]
+  },
+  {
+    "title": "Y2K 彩钻贴纸",
+    "platform": "xiaohongshu",
+    "iconViewBox": "46 246 108 108",
+    "usage": 81000,
+    "en": "Y2K Gem Sticker Maker",
+    "media": [{ "video": "assets/gem-demo.mp4", "poster": "assets/gem-demo-poster.jpg", "ratio": 1.92 }],
+    "desc": "把照片转成千禧年彩钻贴纸风格，为头像、手帐与社交内容提供轻量化创作素材。",
+    "role": "视觉概念 · 生成链路 · Vibe Coding · 发布上线",
+    "link": "https://www.xiaohongshu.com/discovery/item/6a8c68f6000000002a02c5ec?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9cauadxqvBkHqIEv6mz6U7o=&xsec_source=pc_share",
+    "highlight": [
+      "8.1 万人使用"
+    ],
+    "tags": [
+      "V1.0.8"
+    ]
+  },
+  {
+    "title": "表情包合拍",
+    "platform": "xiaohongshu",
+    "iconViewBox": "46 982 108 108",
+    "usage": 52000,
+    "en": "Meme Photo Studio",
+    "media": [
+      { "video": "assets/meme-demo.mp4", "poster": "assets/meme-demo-poster.jpg", "ratio": 0.594 },
+      { "image": "assets/proof-meme-ranking.jpg", "ratio": 0.599 }
+    ],
+    "proof": {
+      "text": "登上小红书官方小工具必吃榜。"
+    },
+    "desc": "一个人或两个人拍照，即可生成有梗的表情包合拍图，缩短从拍摄、生成到分享的完整链路。",
+    "role": "场景洞察 · 交互设计 · 前端实现 · 上线迭代",
+    "link": "https://www.xiaohongshu.com/discovery/item/6a8c305200000000080139e4?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9WHFAJcopUSKTx8FcVx-asE=&xsec_source=pc_share",
+    "highlight": [
+      "5.2 万人使用"
+    ],
+    "tags": [
+      "V1.0.2"
+    ]
+  },
+  {
+    "title": "Let's 显化 · 向宇宙下单",
+    "platform": "xiaohongshu",
+    "iconViewBox": "991 982 108 108",
+    "usage": 129000,
+    "en": "Universe Order",
+    "qr": { "image": "assets/qr-universe-wechat.png", "label": "已上线微信小程序" },
+    "desc": "把愿望转化为一张有仪式感的宇宙订单，围绕表达、分享与复访持续迭代。",
+    "role": "产品概念 · 视觉与交互 · Vibe Coding · 数据迭代",
+    "link": "https://www.xiaohongshu.com/discovery/item/6a5a06b3000000000f008bc2?source=webshare&xhsshare=pc_web&xsec_token=ABIHK82aoCTsn6XspO7KEtqDL2j4q4_ZFl5B4EZSU9yGg=&xsec_source=pc_share",
+    "proof": {
+      "text": "Threads 上有用户自发推荐，单帖 787 赞。",
+      "links": [{ "label": "Threads 用户推荐", "url": "https://www.threads.com/@sirosyan_/post/DbJCXyelG1W" }],
+      "images": ["assets/proof-universe-threads.jpg"]
+    },
+    "highlight": [
+      "12.9 万人使用"
+    ],
+    "tags": [
+      "V1.0.7"
+    ]
+  },
   {
     "title": "Glam · AI 美妆工作室",
     "en": "AI Makeup Studio",
@@ -67,100 +150,6 @@ window.WORKS = [
     "tags": [
       "180,337 结果 UV"
     ]
-  },
-  {
-    "title": "Let's 显化 · 向宇宙下单",
-    "platform": "xiaohongshu",
-    "iconViewBox": "991 982 108 108",
-    "usage": 129000,
-    "en": "Universe Order",
-    "qr": { "image": "assets/qr-universe-wechat.png", "label": "已上线微信小程序" },
-    "desc": "把愿望转化为一张有仪式感的宇宙订单，围绕表达、分享与复访持续迭代。",
-    "role": "产品概念 · 视觉与交互 · Vibe Coding · 数据迭代",
-    "link": "https://www.xiaohongshu.com/discovery/item/6a5a06b3000000000f008bc2?source=webshare&xhsshare=pc_web&xsec_token=ABIHK82aoCTsn6XspO7KEtqDL2j4q4_ZFl5B4EZSU9yGg=&xsec_source=pc_share",
-    "proof": {
-      "text": "Threads 上有用户自发推荐，单帖 787 赞。",
-      "links": [{ "label": "Threads 用户推荐", "url": "https://www.threads.com/@sirosyan_/post/DbJCXyelG1W" }],
-      "images": ["assets/proof-universe-threads.jpg"]
-    },
-    "highlight": [
-      "12.9 万人使用"
-    ],
-    "tags": [
-      "V1.0.7"
-    ]
-  },
-  {
-    "title": "OC DOLL · 亚文化 OC 捏捏",
-    "platform": "xiaohongshu",
-    "iconViewBox": "991 246 108 108",
-    "usage": 52000,
-    "en": "Pixel OC Dress-up",
-    "media": [{ "video": "assets/ocdoll-demo.mp4", "poster": "assets/ocdoll-demo-poster.jpg", "ratio": 0.459 }],
-    "proof": {
-      "text": "多位玩家反馈与 OC 的聊天超过 50 轮。"
-    },
-    "desc": "以二次元群体捏原创角色（OC）的需求为基础，做的亚文化风格像素换装小游戏；后续接入 AI 聊天，支持双角色对话。",
-    "role": "需求洞察 · 换装系统 · AI 角色聊天 · Vibe Coding",
-    "link": "https://xhslink.cn/o/6q3zikWX3uH",
-    "highlight": [
-      "5.2 万人使用"
-    ],
-    "tags": [
-      "V1.0.4"
-    ]
-  },
-  {
-    "title": "表情包合拍",
-    "platform": "xiaohongshu",
-    "iconViewBox": "46 982 108 108",
-    "usage": 52000,
-    "en": "Meme Photo Studio",
-    "media": [
-      { "video": "assets/meme-demo.mp4", "poster": "assets/meme-demo-poster.jpg", "ratio": 0.594 },
-      { "image": "assets/proof-meme-ranking.jpg", "ratio": 0.599 }
-    ],
-    "proof": {
-      "text": "登上小红书官方小工具必吃榜。"
-    },
-    "desc": "一个人或两个人拍照，即可生成有梗的表情包合拍图，缩短从拍摄、生成到分享的完整链路。",
-    "role": "场景洞察 · 交互设计 · 前端实现 · 上线迭代",
-    "link": "https://www.xiaohongshu.com/discovery/item/6a8c305200000000080139e4?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9WHFAJcopUSKTx8FcVx-asE=&xsec_source=pc_share",
-    "highlight": [
-      "5.2 万人使用"
-    ],
-    "tags": [
-      "V1.0.2"
-    ]
-  },
-  {
-    "title": "Y2K 彩钻贴纸",
-    "platform": "xiaohongshu",
-    "iconViewBox": "46 246 108 108",
-    "usage": 81000,
-    "en": "Y2K Gem Sticker Maker",
-    "media": [{ "video": "assets/gem-demo.mp4", "poster": "assets/gem-demo-poster.jpg", "ratio": 1.92 }],
-    "desc": "把照片转成千禧年彩钻贴纸风格，为头像、手帐与社交内容提供轻量化创作素材。",
-    "role": "视觉概念 · 生成链路 · Vibe Coding · 发布上线",
-    "link": "https://www.xiaohongshu.com/discovery/item/6a8c68f6000000002a02c5ec?source=webshare&xhsshare=pc_web&xsec_token=ABco-yNoPPcZlo7QB7m9W-9cauadxqvBkHqIEv6mz6U7o=&xsec_source=pc_share",
-    "highlight": [
-      "8.1 万人使用"
-    ],
-    "tags": [
-      "V1.0.8"
-    ]
-  },
-  {
-    "title": "颠倒世界打捞队",
-    "en": "Upside Down",
-    "media": [{ "video": "assets/upside-demo.mp4", "poster": "assets/upside-demo-poster.jpg", "ratio": 1.79 }],
-    "desc": "怪奇物语主题黄金矿工小游戏，独立完成美术资产生成、数值策划、关卡设计等。",
-    "platform": "xiaohongshu",
-    "iconViewBox": "991 614 108 108",
-    "usage": 20000,
-    "link": null,
-    "highlight": ["2 万人使用"],
-    "tags": ["V1.0.0"]
   },
   {
     "title": "第5求生",

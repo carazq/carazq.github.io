@@ -368,6 +368,7 @@
   }
   .era-list h3 .mline { display: block; }
   .era-list .dir { font-size: 14px; color: #4a4a46; }
+  .era-list .dir a.xhs-profile { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
   .era-list .when {
     font-family: var(--latin);
     font-size: 12px;
@@ -626,8 +627,8 @@
   <a class="brand" href="#top">carazhang<sup>®</sup></a>
   <nav aria-label="主导航">
     <ul>
-      <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
       <li><a class="roll" href="#experience"><span data-after="Career">经历</span></a></li>
+      <li><a class="roll" href="#work"><span data-after="Work">作品</span></a></li>
       <li><a class="roll" href="#about"><span data-after="Off Duty">之外</span></a></li>
     </ul>
   </nav>
@@ -667,65 +668,6 @@
       <span>AI Product</span><span>AI Agents</span><span>Game AI</span><span>AI Search</span><span>Growth Experiments</span><span>Vibe Coding</span>
     </div>
   </div>
-
-  <!-- ================= selected work ================= -->
-  <section id="work" class="container">
-    <div class="sec-label">
-      <h2><span class="mline">独立作品<span class="en">Side Projects</span></span></h2>
-      <span class="count" id="workCount"></span>
-      <span class="rule" aria-hidden="true"></span>
-    </div>
-
-    <p class="work-note">小红书作品需在最新版小红书 App 内体验；电脑浏览器查看笔记需先登录小红书。使用人数更新于 2026-11-27。</p>
-    <div id="workList"></div>
-    <details class="work-source">
-      <summary>查看使用数据来源 · 小红书创作后台截图</summary>
-      <img id="usageSource" width="1840" height="1308" loading="lazy" alt="小红书创作后台：Let's 显化 12.9 万人、Y2K 彩钻 8.1 万人、OC DOLL 5.2 万人、双人表情包 5.2 万人、颠倒世界 2 万人、第五求生配队 99 人使用" />
-    </details>
-    <script>
-      (function () {
-        var esc = function (t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML.replace(/"/g, '&quot;'); };
-        var list = (window.WORKS || []).filter(function (w) { return !w.hidden; });
-        var snapshot = window.XHS_SNAPSHOT;
-        document.getElementById('usageSource').src = snapshot.image;
-        document.getElementById('workCount').textContent = list.length + ' Projects';
-        document.getElementById('workList').innerHTML = list.map(function (w, i) {
-          var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; }).join('');
-          var icon = w.icon ? '<img class="work-icon" src="' + esc(w.icon) + '" width="56" height="56" alt="" />'
-            : w.iconViewBox ? '<svg class="work-icon" viewBox="' + esc(w.iconViewBox) + '" aria-hidden="true"><image href="' + esc(snapshot.image) + '" width="' + (snapshot.width || 1890) + '" height="' + (snapshot.height || 974) + '" /></svg>' : '';
-          var action = !w.link ? '已在小红书发布' : /xiaohongshu\.com|xhslink\./.test(w.link) ? '查看小红书笔记 ↗' : '访问网站 ↗';
-          var meta = (w.tags || []).concat(action).map(esc).join(' · ');
-          var media = w.media || [];
-          var total = media.reduce(function (sum, m) { return sum + (m.ratio || 1.6); }, 0);
-          var preview = media.length ? '<div class="work-media" style="max-width:min(100%,' + Math.round(total * 320) + 'px)">' + media.map(function (m) {
-            var r = m.ratio || 1.6;
-            var inner = m.video
-              ? '<video src="' + esc(m.video) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : '') + ' muted loop playsinline preload="none" aria-label="' + esc(w.title) + ' 演示视频"></video>'
-              : '<img src="' + esc(m.image) + '" loading="lazy" alt="' + esc(w.title) + ' 截图" />';
-            return '<span class="work-preview" style="flex:' + Math.round(r * 100) + ' 1 0;aspect-ratio:' + r + '">' + inner + '</span>';
-          }).join('') + '</div>' : '';
-          var proof = '';
-          if (w.proof) {
-            proof = '<div class="proof"><p>' + esc(w.proof.text) + '</p>' +
-              (w.proof.links || []).map(function (l) { return '<a class="proof-link" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>'; }).join('') +
-              ((w.proof.images || []).length ? '<div class="proof-shots">' + w.proof.images.map(function (src) { return '<a href="' + esc(src) + '"><img src="' + esc(src) + '" loading="lazy" alt="' + esc(w.title) + ' 用户分享截图" /></a>'; }).join('') + '</div>' : '') +
-              '</div>';
-          }
-          var qr = w.qr ? '<div class="work-qr"><img src="' + esc(w.qr.image) + '" width="112" height="112" loading="lazy" alt="' + esc(w.title) + ' 微信小程序码" /><p>' + esc(w.qr.label) + '</p></div>' : '';
-          var open = '<article class="row' + (w.link ? ' has-link' : '') + '">' +
-            (w.link ? '<a class="row-link" href="' + esc(w.link) + '" target="_blank" rel="noopener" aria-label="' + esc(w.title) + '"></a>' : '');
-          return open +
-            '<span class="no">' + String(i + 1).padStart(2, '0') + '</span>' +
-            '<div class="work-title">' + icon + '<div><h3><span class="mline">' + esc(w.title) + '</span></h3>' + (w.en ? '<p class="sub">' + esc(w.en) + '</p>' : '') + '</div></div>' +
-            '<div class="desc"><p>' + esc(w.desc) + '</p>' + (w.role ? '<span class="role">' + esc(w.role) + '</span>' : '') + '</div>' +
-            '<div class="end">' + badges + '<span class="work-meta">' + meta + '</span></div>' +
-            (preview || qr || proof ? '<div class="work-extra' + (preview && proof && !qr ? ' split' : '') + '">' + preview + qr + proof + '</div>' : '') +
-            '<span class="rule" aria-hidden="true"></span></article>';
-        }).join('');
-      })();
-    </script>
-
-  </section>
 
   <!-- ================= experience ================= -->
   <section id="experience" class="container">
@@ -857,6 +799,65 @@
     </ul>
   </section>
 
+  <!-- ================= selected work ================= -->
+  <section id="work" class="container">
+    <div class="sec-label">
+      <h2><span class="mline">独立作品<span class="en">Side Projects</span></span></h2>
+      <span class="count" id="workCount"></span>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <p class="work-note">小红书作品需在最新版小红书 App 内体验；电脑浏览器查看笔记需先登录小红书。使用人数更新于 2026-11-27。</p>
+    <div id="workList"></div>
+    <details class="work-source">
+      <summary>查看使用数据来源 · 小红书创作后台截图</summary>
+      <img id="usageSource" width="1840" height="1308" loading="lazy" alt="小红书创作后台：Let's 显化 12.9 万人、Y2K 彩钻 8.1 万人、OC DOLL 5.2 万人、双人表情包 5.2 万人、颠倒世界 2 万人、第五求生配队 99 人使用" />
+    </details>
+    <script>
+      (function () {
+        var esc = function (t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML.replace(/"/g, '&quot;'); };
+        var list = (window.WORKS || []).filter(function (w) { return !w.hidden; });
+        var snapshot = window.XHS_SNAPSHOT;
+        document.getElementById('usageSource').src = snapshot.image;
+        document.getElementById('workCount').textContent = list.length + ' Projects';
+        document.getElementById('workList').innerHTML = list.map(function (w, i) {
+          var badges = (w.highlight || []).map(function (b) { return '<span class="badge live">' + esc(b) + '</span>'; }).join('');
+          var icon = w.icon ? '<img class="work-icon" src="' + esc(w.icon) + '" width="56" height="56" alt="" />'
+            : w.iconViewBox ? '<svg class="work-icon" viewBox="' + esc(w.iconViewBox) + '" aria-hidden="true"><image href="' + esc(snapshot.image) + '" width="' + (snapshot.width || 1890) + '" height="' + (snapshot.height || 974) + '" /></svg>' : '';
+          var action = !w.link ? '已在小红书发布' : /xiaohongshu\.com|xhslink\./.test(w.link) ? '查看小红书笔记 ↗' : '访问网站 ↗';
+          var meta = (w.tags || []).concat(action).map(esc).join(' · ');
+          var media = w.media || [];
+          var total = media.reduce(function (sum, m) { return sum + (m.ratio || 1.6); }, 0);
+          var preview = media.length ? '<div class="work-media" style="max-width:min(100%,' + Math.round(total * 320) + 'px)">' + media.map(function (m) {
+            var r = m.ratio || 1.6;
+            var inner = m.video
+              ? '<video src="' + esc(m.video) + '"' + (m.poster ? ' poster="' + esc(m.poster) + '"' : '') + ' muted loop playsinline preload="none" aria-label="' + esc(w.title) + ' 演示视频"></video>'
+              : '<img src="' + esc(m.image) + '" loading="lazy" alt="' + esc(w.title) + ' 截图" />';
+            return '<span class="work-preview" style="flex:' + Math.round(r * 100) + ' 1 0;aspect-ratio:' + r + '">' + inner + '</span>';
+          }).join('') + '</div>' : '';
+          var proof = '';
+          if (w.proof) {
+            proof = '<div class="proof"><p>' + esc(w.proof.text) + '</p>' +
+              (w.proof.links || []).map(function (l) { return '<a class="proof-link" href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + ' ↗</a>'; }).join('') +
+              ((w.proof.images || []).length ? '<div class="proof-shots">' + w.proof.images.map(function (src) { return '<a href="' + esc(src) + '"><img src="' + esc(src) + '" loading="lazy" alt="' + esc(w.title) + ' 用户分享截图" /></a>'; }).join('') + '</div>' : '') +
+              '</div>';
+          }
+          var qr = w.qr ? '<div class="work-qr"><img src="' + esc(w.qr.image) + '" width="112" height="112" loading="lazy" alt="' + esc(w.title) + ' 微信小程序码" /><p>' + esc(w.qr.label) + '</p></div>' : '';
+          var open = '<article class="row' + (w.link ? ' has-link' : '') + '">' +
+            (w.link ? '<a class="row-link" href="' + esc(w.link) + '" target="_blank" rel="noopener" aria-label="' + esc(w.title) + '"></a>' : '');
+          return open +
+            '<span class="no">' + String(i + 1).padStart(2, '0') + '</span>' +
+            '<div class="work-title">' + icon + '<div><h3><span class="mline">' + esc(w.title) + '</span></h3>' + (w.en ? '<p class="sub">' + esc(w.en) + '</p>' : '') + '</div></div>' +
+            '<div class="desc"><p>' + esc(w.desc) + '</p>' + (w.role ? '<span class="role">' + esc(w.role) + '</span>' : '') + '</div>' +
+            '<div class="end">' + badges + '<span class="work-meta">' + meta + '</span></div>' +
+            (preview || qr || proof ? '<div class="work-extra' + (preview && proof && !qr ? ' split' : '') + '">' + preview + qr + proof + '</div>' : '') +
+            '<span class="rule" aria-hidden="true"></span></article>';
+        }).join('');
+      })();
+    </script>
+
+  </section>
+
   <!-- ================= off duty ================= -->
   <section id="about" class="container">
     <div class="sec-label">
@@ -867,20 +868,27 @@
     <ul class="era-list">
       <li>
         <span class="no">O-01</span>
+        <h3><span class="mline">小红书创作者</span></h3>
+        <p class="dir">账号「卡拉zz」，发布独立开发的小工具与 AI 相关内容 · <a class="xhs-profile" href="https://www.xiaohongshu.com/user/profile/583106226a6a690a017f7fb3" target="_blank" rel="noopener">查看主页 ↗</a></p>
+        <span class="when">Creator</span>
+        <span class="rule" aria-hidden="true"></span>
+      </li>
+      <li>
+        <span class="no">O-02</span>
         <h3><span class="mline">旅行</span></h3>
         <p class="dir">每年国内外旅行累计 30 天以上</p>
         <span class="when">Travel</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
-        <span class="no">O-02</span>
+        <span class="no">O-03</span>
         <h3><span class="mline">音乐</span></h3>
         <p class="dir">网易云音乐累计听歌 1.65 万首，曲风广泛</p>
         <span class="when">Music</span>
         <span class="rule" aria-hidden="true"></span>
       </li>
       <li>
-        <span class="no">O-03</span>
+        <span class="no">O-04</span>
         <h3><span class="mline">二次元</span></h3>
         <p class="dir">追番 · Cosplay：奇犽 / 明日香 / 空军（第五人格）/ 富江 / 玛奇玛 / 哈尔</p>
         <span class="when">ACG</span>
